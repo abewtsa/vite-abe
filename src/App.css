@@ -7,7 +7,7 @@
 
   --main-colour: #1805ec;
   --main-bg-colour: #1c1924;
-  --light-main-bg-colour: #d0d0d0;
+  --light-main-bg-colour: #ededed;
   --primary-colour: #00ffe1;
   --primary-darker: #2D1F9D;
   --accent-colour: #f72585;
@@ -16,7 +16,7 @@
   --grey300:#e0e0e0;
   font-size:17px;
   line-height: 1.6rem;
-  background-color: var(--main-bg-colour);
+  background-color: var(--light-main-bg-colour);
 }
 
 .title {
@@ -30,7 +30,7 @@ p {
 font-size:1rem;
 line-height: 1.4rem;
 font-weight:300;
-color:var(--grey300);
+color:var(--grey800);
 margin: auto;
 padding: 15px;
 white-space: pre-line;
@@ -45,7 +45,7 @@ h1 {
   font-family: 'SF Pro Display', sans-serif;
   font-weight:600;
   line-height: 2.2rem;
-  color:var(--primary-colour);
+  color:var(--grey800);
   padding: 0 0 0 15px;
   margin: 0;
 }
