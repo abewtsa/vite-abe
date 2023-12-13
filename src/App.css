@@ -20,7 +20,7 @@
 }
 
 .title {
-font-size: 1.2rem;
+font-size: 1.5rem;
 font-weight: 300;
 margin: auto;
 color:var(--primary-colour)
@@ -255,8 +255,16 @@ color: var(--main-colour);
 
 @media (max-width: 600px) {
   p {
-    font-size:1.35rem;
-    line-height:2rem;
+    font-size:1.3rem;
+    line-height:1.6rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    
+    padding: 0 15px 0 15px;
+    margin: 0;
   }
   
   .btn {
