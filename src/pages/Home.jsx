@@ -9,11 +9,11 @@ return (
 <>
 <Section
 header="Welcome to my React Lab"
-textcopy="This is where I learn and develop to test and try different things. As such, this site will be quite messy for the foreseeable future.
+textcopy="My name is Abraham Wong, UI/UX Designer and Front End Developer.
 
-To see current or past projects go to the Projects section.
+This is where I test and develop all things React and JS. As such, this site can be messy but if you're looking to checkout my current or past projects, you're at the right place.
 
-Lately I've taken an interest in Vue as well, and light weight frameworks like AlpineJS or Petite Vue (and SolidJS).
+Lately I've taken an interest in NextJS as well for the SSR features, and other frameworks like AlpineJS or SolidJS.
 
 Reach out to me by email (and social, soon).
 "
@@ -21,13 +21,14 @@ Reach out to me by email (and social, soon).
 
 <Section
 header="UX Design - Not for Profit Digital Fundraising Model"
-textcopy="3 part blog post on the contemporary Not for Profit (or NFP) Digital Fundraising Model.
+textcopy="This is a 3 part blog post on the contemporary Not for Profit (or NFP) Digital Fundraising Model based on my professional experience working in the Non Profit industry.
 
-The blog entries will discuss and explore the common Digital Model used by Australian charities, with examples of digital artefacts from Personas to interactive Prototypes."
+The blog entries will discuss and explore the common Digital Model used by Australian charities, giving a digital anatomy of Digital Fundraising activities, with examples of relevant UX artefacts."
 
 buttonClassName="btn"
 buttonText="Read more"
 buttonLink='https://www.google.com'
+
 />
 
 <Section

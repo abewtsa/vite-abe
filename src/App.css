@@ -140,11 +140,11 @@ img {
 } */
 
 a:link {
-  color: var(--primary-colour);
+  color: var(--main-colour);
 } 
   
 a:visited {
-  color: var(--primary-colour);
+  color: var(--main-colour);
 }
 
 a:hover {
@@ -152,7 +152,7 @@ a:hover {
 }
 
 .special-link {
-color: var(--primary-colour);
+color: var(--main-colour);
 }
 
 /*Base MUI mods*/

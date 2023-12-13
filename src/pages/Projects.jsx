@@ -7,19 +7,31 @@ const Projects = () => {
   return (
     <>
     <Section 
-        header="Current and past projects and Roadmap"
+        header="Upcoming projects"
         textcopy="
-        Simple Todo
-        NextJS project
+        NextJS static site
         Medusa E-Commerce with NextJS
         MERN stack project
+        MUI or Radix implementation
         MDX deployment
         Gatsby inspired lightweight Design System with React
         "
     />
 
     <Section 
+        header="Todo with Firebase"
+
+        textcopy="Simple Todo site with Firebase db live implementation"
+        
+        link="https://abe-todo.netlify.app/"
+        linkClassName="special-link"
+        linkText="Link"
+    />
+
+    <Section 
         header="Todo from WebdevSimplified"
+
+        textcopy="Another todo"
         
         link="https://www.google.com"
         linkClassName="special-link"
