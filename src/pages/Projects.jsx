@@ -8,8 +8,7 @@ const Projects = () => {
     <>
     <Section 
         header="Upcoming projects"
-        textcopy="
-        NextJS static site
+        textcopy="NextJS static site
         Medusa E-Commerce with NextJS
         MERN stack project
         MUI or Radix implementation
