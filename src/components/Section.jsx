@@ -4,13 +4,13 @@ import Link from "./Link.jsx";
 
 // add Button and Text component to Card so that it doesn't need to be called all the time
 
-function Section({ header,textcopy,buttonClassName,buttonText,buttonFunc,buttonLink,linkClassName, link, linkText }) {
+function Section({ header,textcopy,buttonClassName,buttonText,buttonFunc,buttonLink,linkClassName, link, linkText, children }) {
 
   return (
     
     <>
     <div className="container section-card">
-      {/* {children} */}
+
       <Text 
       header={header} 
       textcopy={textcopy}
@@ -29,6 +29,7 @@ function Section({ header,textcopy,buttonClassName,buttonText,buttonFunc,buttonL
         buttonLink={buttonLink}
       />
 
+      {children}
     </div>
     </>
   );

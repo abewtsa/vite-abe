@@ -1,18 +1,25 @@
-function Link({linkText, link, linkClassName}) {
+function Link(props) {
     
-    let insertClassName
+    const { linkText, link, linkClassName } = props;
 
-    if (linkClassName==null){
-        insertClassName="element-none"
-    }
-    else{
-        insertClassName=linkClassName
-    }
+    const insertClassName = linkClassName || 'element-none';
+
+    // let insertClassName
+
+    // if (linkClassName==null){
+    //     insertClassName="element-none"
+    // }
+    // else{
+    //     insertClassName=linkClassName
+    // }
 
     return (
-            <a href={link}>
-            <p className={insertClassName}>{linkText}</p>
-            </a>
+        <>
+        <a href={link}>
+        <p className={insertClassName}>{linkText}</p>
+        </a>
+        </>
     );
 }
+
 export default Link;

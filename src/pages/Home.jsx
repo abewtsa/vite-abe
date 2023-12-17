@@ -1,23 +1,19 @@
 import Section from '../components/Section.jsx';
 
 export default function Home() {
-  const func = () => {
-    console.log("React");
-  };
   
 return (
 <>
 <Section
-header="Welcome to my React Lab"
-textcopy="My name is Abraham Wong, UI/UX Designer and Front End Developer.
+header="Hello and welcome 👋"
+textcopy="My name is Abraham Wong, UI/UX Designer for the past 5 years and currently having a lot of fun delving into Front End stuffs since the end the 2023.
 
-This is where I test and develop all things React and JS. As such, this site can be messy but if you're looking to checkout my current or past projects, you're at the right place.
+This is where I link to my test projects and shape my thoughts (or add some random musings) around all things React and JS. So, while this site can be a bit messy, do please check things out, and I will migrate it to Astro or Next at some point.
 
-Lately I've taken an interest in NextJS as well for the SSR features, and other frameworks like AlpineJS or SolidJS.
-
-Reach out to me by email (and social, soon).
-"
-/>
+Reach out to me by email (and social, soon)."
+>
+<p><a className="special-link" href="mailto:abrams.wong@gmail.com">Email</a></p>
+</Section>
 
 <Section
 header="UX Design - Not for Profit Digital Fundraising Model"

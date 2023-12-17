@@ -5,6 +5,7 @@ import Projects from './pages/Projects.jsx'
 import Layout from './pages/Layout.jsx'
 import Contact from './pages/Contact.jsx'
 import About from './pages/About.jsx'
+import Cheatsheet from './pages/Cheatsheet.jsx'
 import './App.css'
 
 // import Nav from './components/Header/DropdownHeader/Nav.jsx'
@@ -23,15 +24,17 @@ function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
-          <Route path="newlink" element={
+          <Route path="cheatsheet" element={<Cheatsheet />} />
+          {/* <Route path="newlink" element={
                 <Link
                   to="https://reactrouter.com/docs/en/v6/components/link"
                   reloadDocument={true}
                   target="_blank"
                 >
                   Docs
-                </Link>}/>
+                </Link>}/> */}
       </Route>
+
       </Routes>
 
     </BrowserRouter>
@@ -53,7 +56,7 @@ README
 ------------------------------------
 Built with Vite and React, how to use
 1. Install stack with npm, list below 
-2. Create or modify page jsx and add Components from Components, pass Props for Components values
+2. Create or modify page jsx and add Components or Pages, add Props to access Components
 3. Styling handled in App.css with SASS
 4. React router for single page simulation, virtual DOM loading of pages
 5. Use MUI for complete Boilerplate version - or overwrite with own custom styling

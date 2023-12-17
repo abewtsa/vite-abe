@@ -7,9 +7,11 @@ const Contact = () => {
   <>
 
   <Section
-  header="Contact me"
-  textcopy="Email here"
-  />
+  header="Contact"
+  >
+  <p>Best way to reach me - <a className="special-link" href="mailto:abrams.wong@gmail.com">Email</a></p>
+  
+  </Section>
       
   </>
   )
