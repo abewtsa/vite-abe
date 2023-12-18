@@ -24,6 +24,7 @@
 .title {
 font-size: 1.5rem;
 font-weight: 300;
+padding-top:8px;
 margin: auto;
 color:var(--primary-colour)
 }
@@ -52,18 +53,34 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-size: 1.4rem;
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight:600;
+  line-height: 1.8rem;
+  color:var(--cream);
+  padding: 0 0 0 15px;
+  margin: 0;
+}
+
 body{
   background-color: var(--main-bg-colour);
   /* font-family: 'SF Pro Display', sans-serif; */
   font-family: 'Hind Guntur', sans-serif;
+  overflow-x: hidden;
 }
 
 footer
 {
   font-size:0.9rem;
-  margin: 0 0 0 30px;
-  height:6vh;
+  margin: 0 0 30px 30px;
+  /* height:6vh; */
   color:var(--cream);
+  font-weight: 300;
+
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* height: 2.5rem; */
 }
 
 img {
@@ -75,7 +92,17 @@ img {
   display: flex;
   flex-direction: column;
   text-align: left;
-  width:70%;
+  /* width:65%; */
+}
+
+.container-680 {
+  width: 680px;
+}
+
+@media (max-width: 600px) {
+  .container-680 {
+    width:100%;
+  }
 }
 
 .container-image-flex {
@@ -92,56 +119,6 @@ img {
 .body-wrapper {
   height:80vh;
 }
-
-/* HEADER */
-/* 
-.Header-wrapper {
-  background-color: var(--main-colour);
-  height: 5vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px 30px 10px 0px;
-}
-
-.Header-item{
-  font-size: 0.8rem;
-  font-weight:400;
-  text-align: center;
-  padding: 20px;
-  color: white;
-  width:10%;
-  
-  &.Header-item:hover {
-    background-color: var(--primary-colour);
-  }
-}
-
-@media (max-width: 600px) {
-  .Header-item {
-    width:30%;
-  }
-}
-
-@media (max-width: 900px) {
-  .Header-item {
-    width:30%;
-  }
-} */
-
-/* FOOTER */
-
-/* .Footer-wrapper {
-  margin-top: auto;
-  height: 6vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: left;
-  font-size: 0.8rem;
-  color: white;
-  padding: 10px 30px 10px 30px;
-} */
 
 a:link {
   color: var(--primary-colour);
@@ -216,6 +193,10 @@ color: var(--secondary-colour);
 
 /* .nav-elements {
 } */
+
+/* COMPONENTS */
+
+/* SimpleHeader.jsx */
 
 .nav-elements ul {
   display: flex;
@@ -349,6 +330,21 @@ color: var(--secondary-colour);
   }
 }
 
+/* Toggle.jsx */
+.active-icon {
+  width: 30px;
+}
+
+.inactive-icon {
+  width: 30px;
+}
+
+.toggle-wrapper{
+  height:60px;
+}
+
+/* Section.jsx */
+
 .section-card {
   border-radius: 15px;
   border:0.5px solid var(--primary-darker);
@@ -362,6 +358,60 @@ color: var(--secondary-colour);
   min-width: 300px;
   margin: 0 auto 20px;
   }
+}
+
+/* ProfileCard.jsx */
+
+.main-wrapper {
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .main-wrapper{
+  flex-direction: column-reverse;
+  }
+}
+
+.profile-card{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+  width: 240px;
+  margin:0 0 0 30px;
+  background-color: rgb(23, 27, 52);
+  border-radius: 15px;
+}
+
+.profile-image {
+  width:150px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+  .profile-card{
+  width:86%;
+  margin:auto;
+  margin-bottom:20px;
+  }
+}
+
+/* Curves */
+
+.spacer {
+  aspect-ratio: 900/300;
+  width: 200%;
+
+  /* height: 240px; */
+
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.layer1 {
+  background-image: url('https://raw.githubusercontent.com/abewtsa/vite-abe/0b4aa6003cceaad481e31a6ab4f42b6c5103f5b4/public/haikei2.svg');
 }
 
 /* From Dropdown menu Nav App.css original css */
@@ -462,15 +512,53 @@ button span {
   top: -7px;
 }
 
-/* Toggle CSSes */
-.active-icon {
-  width: 30px;
+/* UNUSED CSS */
+/* HEADER */
+/* 
+.Header-wrapper {
+  background-color: var(--main-colour);
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 30px 10px 0px;
 }
 
-.inactive-icon {
-  width: 30px;
+.Header-item{
+  font-size: 0.8rem;
+  font-weight:400;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  width:10%;
+  
+  &.Header-item:hover {
+    background-color: var(--primary-colour);
+  }
 }
 
-.toggle-wrapper{
-  height:60px;
+@media (max-width: 600px) {
+  .Header-item {
+    width:30%;
+  }
 }
+
+@media (max-width: 900px) {
+  .Header-item {
+    width:30%;
+  }
+} */
+
+/* FOOTER */
+
+/* .Footer-wrapper {
+  margin-top: auto;
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  font-size: 0.8rem;
+  color: white;
+  padding: 10px 30px 10px 30px;
+} */

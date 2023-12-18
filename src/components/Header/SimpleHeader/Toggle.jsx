@@ -23,7 +23,7 @@ function ToggleImages({ active, handleChangeActive }) {
             />
           )}
         </div>
-        <div className="title" onClick={() => handleChangeActive()}>AbeJS</div>
+        <div className="title" onClick={() => handleChangeActive()}>Abe React Sandbox</div>
       </>
     );
   }

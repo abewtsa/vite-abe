@@ -15,7 +15,7 @@ function Link(props) {
 
     return (
         <>
-        <a href={link}>
+        <a target="_blank" href={link}>
         <p className={insertClassName}>{linkText}</p>
         </a>
         </>

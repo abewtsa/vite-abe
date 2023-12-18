@@ -5,6 +5,8 @@ import Text from "../components/Text.jsx";
 const Contact = () => {
   return (
   <>
+  <div className='main-wrapper'>
+  <div className='container-680'>
 
   <Section
   header="Contact"
@@ -12,7 +14,10 @@ const Contact = () => {
   <p>Best way to reach me - <a className="special-link" href="mailto:abrams.wong@gmail.com">Email</a></p>
   
   </Section>
-      
+
+  </div>  
+  </div>
+  {/* <div className="spacer layer1"></div>     */}
   </>
   )
 }

@@ -15,6 +15,7 @@ function App() {
 
   return (
     <>
+    <div style={{display:'flex',flexDirection:'column',minHeight:'95vh'}}>
     <BrowserRouter>
       <Navbar />
  
@@ -38,11 +39,11 @@ function App() {
       </Routes>
 
     </BrowserRouter>
-
+    </div>
     <footer>
-      Built in React with Vite 
-    </footer>
-    </>
+    Built with React in Vite 
+  </footer>
+  </>
   )
 }
 
