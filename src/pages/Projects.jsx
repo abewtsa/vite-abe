@@ -35,7 +35,7 @@ const Projects = () => {
     <Section
         header="Launchpads"
         textcopy="Something Random Everyday - Generative content
-        Headless Donation page"
+        Headless Donation page - do you want fries with your personalisation?"
     >
     
     </Section>
