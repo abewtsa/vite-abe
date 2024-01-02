@@ -40,6 +40,7 @@ function App() {
 
     </BrowserRouter>
     </div>
+
     <footer>
     Built with React in Vite 
   </footer>

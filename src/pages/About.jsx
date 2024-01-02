@@ -1,7 +1,6 @@
 import Section from '../components/Section.jsx';
 import Button from "../components/Button.jsx";
 import Text from "../components/Text.jsx";
-
 import ProfileCard from '../components/ProfileCard.jsx';
 
 const developerData = {
@@ -28,8 +27,7 @@ const developerData = {
 const About = () => {
   return (
   <>
-  <div className='main-wrapper'>
-
+  <div id='about' className='main-wrapper'>
   <div className='container-680'>
   <Section 
   header="About me" 

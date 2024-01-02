@@ -7,7 +7,7 @@ import AccordionList from '../components/Collapse.jsx';
 const Cheatsheet = () => {
   return (
   <>
-  <div className='main-wrapper'>
+  <div id='cheatsheet' className='main-wrapper'>
   <div className='container-680'>
 
   <Section
@@ -18,6 +18,8 @@ const Cheatsheet = () => {
   <a className="special-link" target="_blank" href="https://coolors.co/">Coolors</a> - colour palette generator<br />
   <a className="special-link" target="_blank" href="https://angrytools.com/css-flex/">Angry Flexbox</a> - flexbox sandbox<br />
   <a className="special-link" target="_blank" href="https://javascript.info/">https://javascript.info/</a> - JS guide<br />  
+  <a className="special-link" target="_blank" href="https://flowbite.com/blocks/">Flowbite</a> - Free Tailwind UI component library<br />
+  
   </p>
 
   </Section>

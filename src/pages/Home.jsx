@@ -1,4 +1,6 @@
 import Section from '../components/Section.jsx';
+import Projects from './Projects.jsx';
+import Cheatsheet from './Cheatsheet.jsx';
 
 export default function Home() { 
 
@@ -43,6 +45,10 @@ textcopy="YesFresh! is a self started project, mainly inspired by how Google's M
 </div>
 
 </div>
+
+
+<Projects />
+<Cheatsheet />
 {/* <div className="spacer layer1"></div> */}
 {/*<Card>
         <Image
