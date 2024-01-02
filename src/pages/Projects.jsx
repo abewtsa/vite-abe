@@ -14,7 +14,7 @@ const Projects = () => {
         Medusa E-Commerce with NextJS
         MERN stack project
         MUI or Radix implementation
-        MDX deployment
+        Storybook
         Gatsby inspired lightweight Design System with React
         "
     >

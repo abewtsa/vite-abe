@@ -2,6 +2,7 @@ import Section from '../components/Section.jsx';
 import Button from "../components/Button.jsx";
 import Text from "../components/Text.jsx";
 import Link from '../components/Link.jsx';
+import AccordionList from '../components/Collapse.jsx';
 
 const Cheatsheet = () => {
   return (
@@ -34,8 +35,10 @@ const Cheatsheet = () => {
   header="100 Universal Principles of UX" 
   >
   <p><a className="special-link" target="_blank" href="https://www.dropbox.com/s/z2totj4uzoicfj3/Universal_Principles_of_UX_Preview.pdf">https://book.antonandirene.com/</a></p>
+  <AccordionList />
   </Section>
   
+
   {/* <Link 
       linkClassName="noname"
       link="https://www.google.com"
