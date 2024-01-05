@@ -18,10 +18,12 @@ const Cheatsheet = () => {
   <a className="special-link" target="_blank" href="https://coolors.co/">Coolors</a> - colour palette generator<br />
   <a className="special-link" target="_blank" href="https://angrytools.com/css-flex/">Angry Flexbox</a> - flexbox sandbox<br />
   <a className="special-link" target="_blank" href="https://javascript.info/">https://javascript.info/</a> - JS guide<br />  
-  <a className="special-link" target="_blank" href="https://flowbite.com/blocks/">Flowbite</a> - Free Tailwind UI component library<br />
-  
+  <a className="special-link" target="_blank" href="https://flowbite.com/blocks/">Flowbite</a> - Tailwind UI component library<br />
+  <a className="special-link" target="_blank" href="https://www.hyperui.dev">HyperUI</a> - Open source Tailwind UI component library<br />
+  <a className="special-link" target="_blank" href="https://app.haikei.app/">Haikei</a> - SVG generator for flair and flavour<br />
   </p>
 
+  
   </Section>
   
   <Section
@@ -34,9 +36,9 @@ const Cheatsheet = () => {
   </Section>
 
   <Section
-  header="100 Universal Principles of UX" 
+  header="100 Universal Principles of UX"
   >
-  <p><a className="special-link" target="_blank" href="https://www.dropbox.com/s/z2totj4uzoicfj3/Universal_Principles_of_UX_Preview.pdf">https://book.antonandirene.com/</a></p>
+  <p>Book by Irene Pereyra 👉 <a className="special-link" target="_blank" href="https://www.dropbox.com/s/z2totj4uzoicfj3/Universal_Principles_of_UX_Preview.pdf">https://book.antonandirene.com/</a></p>
   <AccordionList />
   </Section>
   

@@ -224,7 +224,7 @@ color: var(--secondary-colour);
 .sticky-mobile {
   color: var(--primary-colour);
   font-size: 0.9rem;
-  font-weight:300;
+  font-weight:500;
   width:150px;
   height: 50px;
   position: fixed;

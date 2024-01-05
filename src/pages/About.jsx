@@ -4,11 +4,11 @@ import Text from "../components/Text.jsx";
 import ProfileCard from '../components/ProfileCard.jsx';
 
 const developerData = {
-  name: 'Abraham Wongso',
+  name: 'Abraham Wong',
   place: 'Melbourne + Sydney',
-  role: 'UX/UI/Frontend Designer and Developer ☕',
+  role: 'UX/UI Designer and (hopeful) Frontend Developer ☕',
   // skills: ['React', 'JavaScript', 'HTML', 'CSS'],
-  bio: 'Likes code, design, product development, meaningful user experience and engagement.',
+  bio: 'Likes code, clean design, product development, and meaningful user experience.',
   imageUrl: 'https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/mejapan.jpg',
 
   socialIcons: [
@@ -31,11 +31,11 @@ const About = () => {
   <div className='container-680'>
   <Section 
   header="About me" 
-  textcopy="I've had a love of design for a long time with a strong inclination to all things tech.
+  textcopy="I've always had a love for design with strong inclination to all things tech. 
   
-  My career started as a print designer agency side 10 years ago and I gradually moved more onto the digital side of things and I have been working in UX and corporate CX in the last five years.
+  Dad brought home an unused PC from work one day and I spent the whole afternoon coming up with silly designs in Paintshop Pro on good old Win95.
   
-  And now I find myself enjoying lots of coding!
+  My career started as a print designer agency side roughly 10 years ago and I gradually moved more onto the digital side of things and I have been working in UX and corporate CX in the last 5 years.
   " />
   </div>
 
