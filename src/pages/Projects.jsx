@@ -11,9 +11,13 @@ const Projects = () => {
     <Section
         header="Figma"
     >
-    <p><a className="special-link" target="_blank" href="https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design">YesFresh!</a> - High fidelity prototype for a delivery-catering hybrid customer app<br />
-    <a className="special-link" target="_blank" href="https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design">Netlink</a> - Prototype for a static Agency site<br />
-    Short Donation Form - TSA 2019 version</p>
+    <p><a className="special-link" target="_blank" href="https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design">YesFresh!</a> - High fidelity prototype for a food delivery-catering hybrid app<br />
+    <a className="special-link" target="_blank" href="https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design">
+    <img width='450px' height='300px' src='https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/YesFresh.jpg'></img></a><br /><br />
+    <a className="special-link" target="_blank" href="https://www.figma.com/proto/O6vsMOXDTZaAfZeLw7wu9J/Netlink-mockup-14-Dec-2023?page-id=0%3A1&type=design&node-id=98-533&viewport=1070%2C2777%2C0.26&t=NolAobrZsJ0sYSA1-1&scaling=min-zoom&starting-point-node-id=98%3A533&mode=design">Netlink</a> - Prototype for a static Agency site<br />
+    <a className="special-link" target="_blank" href="https://www.figma.com/proto/O6vsMOXDTZaAfZeLw7wu9J/Netlink-mockup-14-Dec-2023?page-id=0%3A1&type=design&node-id=98-533&viewport=1070%2C2777%2C0.26&t=NolAobrZsJ0sYSA1-1&scaling=min-zoom&starting-point-node-id=98%3A533&mode=design"><img width='450px' height='300px' src='https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/Netlink-home.jpg'></img></a><br /><br />
+    Short Donation Form - TSA 2019 version - coming soon!</p>
+
 
     </Section>
 

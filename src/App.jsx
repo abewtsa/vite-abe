@@ -15,6 +15,8 @@ function App() {
 
   return (
     <>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+
     <div style={{display:'flex',flexDirection:'column',minHeight:'95vh'}}>
     <BrowserRouter>
       <Navbar />
@@ -26,14 +28,6 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="cheatsheet" element={<Cheatsheet />} />
-          {/* <Route path="newlink" element={
-                <Link
-                  to="https://reactrouter.com/docs/en/v6/components/link"
-                  reloadDocument={true}
-                  target="_blank"
-                >
-                  Docs
-                </Link>}/> */}
       </Route>
 
       </Routes>

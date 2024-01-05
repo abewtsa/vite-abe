@@ -6,10 +6,10 @@ import ProfileCard from '../components/ProfileCard.jsx';
 const developerData = {
   name: 'Abraham Wong',
   place: 'Melbourne + Sydney',
-  role: 'UX/UI Designer and (hopeful) Frontend Developer ☕',
+  role: 'UX/UI Designer and Frontend Developer',
   // skills: ['React', 'JavaScript', 'HTML', 'CSS'],
-  bio: 'Likes code, clean design, product development, and meaningful user experience.',
-  imageUrl: 'https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/mejapan.jpg',
+  bio: 'Likes ☕ , clean design, product development, and meaningful user experience.',
+  imageUrl: 'https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/mejapan-small.jpg',
 
   socialIcons: [
     {
