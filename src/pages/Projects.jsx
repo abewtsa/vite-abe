@@ -23,8 +23,7 @@ const Projects = () => {
 
     <Section 
         header="Current Projects"
-        textcopy="Nextcore Digital - NextJS site
-        Astro site
+        textcopy="Astro site
         Medusa E-Commerce with NextJS
         MERN stack project
         Endless Tailwind UI frame
@@ -33,7 +32,9 @@ const Projects = () => {
         Chrome Extension
         "
     >
-    <p><a className="special-link" target="_blank" href="https://chromewebstore.google.com/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma">Todo with Firebase</a> - Simple Todo site with Firebase DB<br />
+    <p>
+        <a className="special-link" target="_blank" href="https://nextcore.digital">Nextcore Digital - NextJS site</a><br />
+        <a className="special-link" target="_blank" href="https://chromewebstore.google.com/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma">Todo with Firebase</a> - Simple Todo site with Firebase DB<br />
     {/* <a className="special-link" target="_blank" href="https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg">Todo from WebdevSimplified</a> simple todo */}
     </p>
     

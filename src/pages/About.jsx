@@ -33,7 +33,7 @@ const About = () => {
   header="About me" 
   textcopy="I've always had a love for design with strong inclination to all things tech. 
   
-  Dad brought home an unused PC from work one day and I spent the whole afternoon coming up with silly designs in Paintshop Pro on good old Win95.
+  Dad brought home an unused PC from work one day and I spent the whole afternoon coming up with silly designs in Paintshop Pro on a Win95.
   
   My career started as a print designer agency side roughly 10 years ago and I gradually moved more onto the digital side of things and I have been working in UX and corporate CX in the last 5 years.
   " />
