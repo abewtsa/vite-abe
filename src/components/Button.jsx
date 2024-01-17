@@ -20,7 +20,7 @@ function Button({ buttonText, buttonLink, backgroundColor, color, buttonFunc, bu
     }
     
     return (
-        <a href={buttonLink}>
+        <a target="_blank" href={buttonLink}>
         <button 
         className={insertButtonClass} 
         style={style} 

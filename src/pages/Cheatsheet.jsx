@@ -14,11 +14,12 @@ const Cheatsheet = () => {
   header="Tools" 
   // textcopy="Tools and cheatsheets for personal and professional uses"
   >
-  <p><a className="special-link" target="_blank" href="https://fontjoy.com/">Fontjoy</a> - font pairing generator<br />
+  <p><a className="special-link" target="_blank" href="https://materialui.co/">Materialui.co</a> - colours and styles for component building blocks<br />
+    <a className="special-link" target="_blank" href="https://fontjoy.com/">Fontjoy</a> - font pairing generator<br />
   <a className="special-link" target="_blank" href="https://coolors.co/">Coolors</a> - colour palette generator<br />
   <a className="special-link" target="_blank" href="https://angrytools.com/css-flex/">Angry Flexbox</a> - flexbox sandbox<br />
   <a className="special-link" target="_blank" href="https://javascript.info/">https://javascript.info/</a> - JS guide<br />  
-  <a className="special-link" target="_blank" href="https://flowbite.com/blocks/">Flowbite</a> - Tailwind UI component library<br />
+  <a className="special-link" target="_blank" href="https://daisyui.com/">DaisyUI</a> - Tailwind UI component library<br />
   <a className="special-link" target="_blank" href="https://www.hyperui.dev">HyperUI</a> - Open source Tailwind UI component library<br />
   <a className="special-link" target="_blank" href="https://app.haikei.app/">Haikei</a> - SVG generator for flair and flavour<br />
   </p>

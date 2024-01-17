@@ -11,12 +11,28 @@ const Projects = () => {
     <Section
         header="Figma"
     >
-    <p><a className="special-link" target="_blank" href="https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design">YesFresh!</a> - High fidelity prototype for a food delivery-catering hybrid app<br />
+    <p>YesFresh! is a functional design for a food delivery-catering hybrid app with a focus on delivering a complete set of production ready screens and components.</p>
+    <Button
+        buttonClassName='btn'
+        buttonText='See in Figma'
+        buttonFunc=''
+        buttonLink='https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design'
+    />
+    <p>
     <a className="special-link" target="_blank" href="https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design">
-    <img width='450px' height='300px' src='https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/YesFresh.jpg'></img></a><br /><br />
-    <a className="special-link" target="_blank" href="https://www.figma.com/proto/O6vsMOXDTZaAfZeLw7wu9J/Netlink-mockup-14-Dec-2023?page-id=0%3A1&type=design&node-id=98-533&viewport=1070%2C2777%2C0.26&t=NolAobrZsJ0sYSA1-1&scaling=min-zoom&starting-point-node-id=98%3A533&mode=design">Netlink</a> - Prototype for a static Agency site<br />
-    <a className="special-link" target="_blank" href="https://www.figma.com/proto/O6vsMOXDTZaAfZeLw7wu9J/Netlink-mockup-14-Dec-2023?page-id=0%3A1&type=design&node-id=98-533&viewport=1070%2C2777%2C0.26&t=NolAobrZsJ0sYSA1-1&scaling=min-zoom&starting-point-node-id=98%3A533&mode=design"><img width='450px' height='300px' src='https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/Netlink-home.jpg'></img></a><br /><br />
-    Short Donation Form - TSA 2019 version - coming soon!</p>
+    <img width='450px' height='300px' src='/public/YesFresh-Splash.jpeg'></img></a><br /><br />
+    
+    Netlink - this is an early prototype pitched for a static agency site.</p>
+
+    <Button
+        buttonClassName='btn'
+        buttonText='See in Figma'
+        buttonFunc=''
+        buttonLink='https://www.figma.com/proto/O6vsMOXDTZaAfZeLw7wu9J/Netlink-mockup-14-Dec-2023?page-id=0%3A1&type=design&node-id=98-533&viewport=1070%2C2777%2C0.26&t=NolAobrZsJ0sYSA1-1&scaling=min-zoom&starting-point-node-id=98%3A533&mode=design'
+    />
+
+    <p>
+    <a className="special-link" target="_blank" href="https://www.figma.com/proto/O6vsMOXDTZaAfZeLw7wu9J/Netlink-mockup-14-Dec-2023?page-id=0%3A1&type=design&node-id=98-533&viewport=1070%2C2777%2C0.26&t=NolAobrZsJ0sYSA1-1&scaling=min-zoom&starting-point-node-id=98%3A533&mode=design"><img width='450px' height='300px' src='/public/Netlink-home.jpg'></img></a></p>
 
 
     </Section>
