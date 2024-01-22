@@ -14,7 +14,10 @@ const Cheatsheet = () => {
   header="Tools" 
   // textcopy="Tools and cheatsheets for personal and professional uses"
   >
-  <p><a className="special-link" target="_blank" href="https://materialui.co/">Materialui.co</a> - colours and styles for component building blocks<br />
+  <p><a className="special-link" target="_blank" href="https://materialui.co/">Materialui.co</a> - colours and styles<br />
+  <a className="special-link" target="_blank" href="https://typescale.com/">Typescale</a> - typescale generator<br />
+  <a className="special-link" target="_blank" href="https://lottiefiles.com/">LottieFiles</a> - lottie SVG animations<br />
+  <a className="special-link" target="_blank" href="https://www.lottielab.com/">LottieLab</a> - lottie editor and creator<br />
     <a className="special-link" target="_blank" href="https://fontjoy.com/">Fontjoy</a> - font pairing generator<br />
   <a className="special-link" target="_blank" href="https://coolors.co/">Coolors</a> - colour palette generator<br />
   <a className="special-link" target="_blank" href="https://angrytools.com/css-flex/">Angry Flexbox</a> - flexbox sandbox<br />

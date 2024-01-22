@@ -21,7 +21,7 @@ Figma links and projects below, or reach out to me by email. "
 </Section>
 
 
-<Section
+{/* <Section
 header="UX Design - Not for Profit Digital Fundraising Model"
 textcopy="This 3 part blog entries will discuss and explore the common digital model used by Australian charities, giving a digital anatomy of Digital Fundraising activities, with examples of relevant UX artefacts."
 
@@ -29,7 +29,7 @@ buttonClassName="btn"
 buttonText="Coming soon"
 // buttonLink='https://www.google.com'
 
-/>
+/> */}
 
 {/* <Section
 header="Figma prototype - YesFresh!"
