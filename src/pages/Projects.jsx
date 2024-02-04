@@ -23,7 +23,7 @@ const Projects = () => {
     <img width='450px' height='300px' src='https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/YesFresh-Splash.jpeg'></img></a>
     </p>
 
-    <p>Monezi - financial advice and ethical micro loan financial product app.</p>
+    <p>HOOPS - event booking platform to simplify event management and promotion with QR codes</p>
     <Button
         buttonClassName='btn'
         buttonText='Link coming soon'
@@ -31,7 +31,7 @@ const Projects = () => {
         // buttonLink=''
     />
     <p>
-    <img width='450px' height='300px' src='https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/Monezi-mobile.png'>
+    <img width='450px' height='300px' src='https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/Hoops-website.jpg'>
     </img>
     </p>
 
