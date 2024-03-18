@@ -8,6 +8,7 @@ return (
 <>
   <div className='main-wrapper'>
     <div className='container-680'>
+
       <Section
       header="Hello and welcome 👋"
       textcopy="I'm Abraham and this my portfolio site where you can find my projects, UX thoughts and Figma designs.

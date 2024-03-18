@@ -5,19 +5,113 @@
   width:100lh;
   min-height: 100vh;
 
-  --main-colour: #4000b8;
+  --main-colour: #d8dcf0;
+  --dark-main-colour: #4000b8;
   --main-bg-colour: #0d1321;
   --light-main-bg-colour: #ededed;
-  --primary-colour: #00b4d8;
+  --primary-colour: #090e1a;
   --primary-darker: #0077b6;
+  --dark-primary-colour: #fff4e6;
   --accent-colour: #f2ad00;
+  --dark-accent-colour: #00b4d8;
   --secondary-colour: #00b4d8;
   --grey800:#424242;
   --grey300:#e0e0e0;
-  --cream:#f0ebd8;
+  --cream:#e3dfdc;
   font-size:17px;
   line-height: 1.6rem;
-  background-color: var(--main-bg-colour);
+  background-color: var(--light-main-bg-colour);
+}
+
+.title {
+font-size: 1.5rem;
+font-weight: 300;
+padding-top:8px;
+margin: auto;
+color:var(--primary-colour)
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight:600;
+  line-height: 2.2rem;
+  color:var(--primary-colour);
+  padding: 0 0 0 15px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight:600;
+  line-height: 1rem;
+  color:var(--primary-colour);
+  padding: 0 0 0 15px;
+  margin: auto;
+}
+
+.navbar {
+  height: 100px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* ## Dark Mode ## */
+.dark-mode {
+
+    #root {
+    background-color: var(--main-bg-colour);
+    }
+
+    title, h1, h2, p, footer, .sticky-mobile, .title {
+    color:var(--dark-primary-colour)
+    }
+
+    .sticky-desktop, .sticky-mobile {
+    background-color:var(--primary-colour)
+    }
+
+    @media (max-width: 600px){
+    .nav-elements {
+        background-color:var(--main-bg-colour)
+    }
+    }
+
+    .btn {
+    background-color: var(--main-bg-colour);
+    color: var(--cream);
+    }
+
+    .profile-card{
+    background-color:rgb(23, 27, 52);
+    }
+
+    a:link {
+    color: var(--dark-primary-colour);
+    }
+
+    a:visited {
+    color: var(--dark-primary-colour);
+    }
+
+    a:hover {
+    color: var(--accent-colour);
+    }
+
+    .nav-elements ul a, .nav-elements ul a.active {
+    color: var(--dark-primary-colour);
+    }
+
+    .nav-elements ul a:hover {
+    color: var(--accent-colour);
+    }
+
+    #toggle {
+        .toggle-inner {
+            content: url('/public/moon.svg');
+        }
+    }
 }
 
 .title {
@@ -32,34 +126,13 @@ p {
 font-size:1.1rem;
 line-height: 1.5rem;
 font-weight:300;
-color:var(--cream);
-/* margin: auto; */
+color:var(--primary-colour);
 padding: 0 15px 0 15px;
 white-space: pre-line;
 }
 
 .element-none {
   display:none;
-}
-
-h1 {
-  font-size: 1.8rem;
-  font-family: 'SF Pro Display', sans-serif;
-  font-weight:600;
-  line-height: 2.2rem;
-  color:var(--cream);
-  padding: 0 0 0 15px;
-  margin: auto;
-}
-
-h2 {
-  font-size: 1.4rem;
-  font-family: 'SF Pro Display', sans-serif;
-  font-weight:600;
-  line-height: 1rem;
-  color:var(--cream);
-  padding: 0 0 0 15px;
-  margin: auto;
 }
 
 body{
@@ -73,12 +146,8 @@ footer
   font-size:0.9rem;
   margin: 0 0 30px 30px;
   /* height:6vh; */
-  color:var(--cream);
+  color:var(--primary-colour);
   font-weight: 300;
-
-  /* position: absolute; */
-  /* bottom: 0; */
-  /* height: 2.5rem; */
 }
 
 img {
@@ -126,28 +195,25 @@ img {
 
 a:link {
   color: var(--primary-colour);
-} 
-  
+}
+
 a:visited {
   color: var(--primary-colour);
 }
 
 a:hover {
-  color: var(--accent-colour);
+  color: var(--dark-accent-colour);
 }
 
-.special-link {
-color: var(--secondary-colour);
-}
 
 /*Base MUI mods*/
- 
+
 .btn {
   border: solid 1px var(--secondary-colour);
-  background-color:var(--main-bg-colour);
+  background-color:var(--light-main-bg-colour);
   font-size: 1rem;
   line-height: 1.3rem;
-  color: var(--cream);
+  color: var(--primary-colour);
   border-radius: 8px;
   font-weight: 600;
   padding: 10px 15px;
@@ -156,21 +222,21 @@ color: var(--secondary-colour);
   transition: all 150ms ease;
   width:fit-content;
   margin: 0 0 0 15px;
- 
+
   &:hover:not(:disabled) {
     background-color: turquoise;
   }
- 
+
   &:active:not(:disabled) {
     background-color: var(--primary-colour);
   }
- 
+
   &.btn:hover {
     background-color:var(--secondary-colour);
     border: solid 1px var(--secondary-colour);
     color: var(--main-bg-colour)
   }
- 
+
   &.btn.disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -179,16 +245,38 @@ color: var(--secondary-colour);
 
 .container-header {
   margin: auto;
+  justify-content: space-between;
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.navbar {
-  height: 70px;
-  background-color: var(--main-colour);
-  position: relative;
-  margin-bottom: 30px;
+/* Toggle CSS */
+#toggle {
+  width: 45px;
+  display: flex;
+  padding: 5px;
+  background-color: #1a202c;
+  display: block;
+  border-radius: 1000px;
+  cursor: pointer;
+  box-shadow: 0px 5px 20px -10px #000000;
+  transition: background-color 0.2s ease-in;
+  margin-right: 30px;
+
+  .toggle-inner {
+    width: 20px;
+    padding: 3px;
+    height: 15px;
+    background-color: white;
+    border-radius: 1000px;
+    transition: margin-left 0.2s ease-in, background-color 0.2s ease-in;
+    content: url('/public/sun.svg');
+
+    &.toggle-active {
+      margin-left: 20px;
+    }
+  }
 }
 
 /* .sticky-nav {
@@ -222,7 +310,7 @@ color: var(--secondary-colour);
   right: 0px;
   bottom: 70px;
   padding-right: 50px;
-  background-color: var(--main-colour);
+  background-color: var(--cream);
 }
 
 .sticky-mobile {
@@ -235,7 +323,7 @@ color: var(--secondary-colour);
   right: 0px;
   bottom: 20px;
   padding-right: 50px;
-  background-color: var(--main-colour);
+  background-color: var(--cream);
   cursor: pointer;
 }
 
@@ -264,29 +352,31 @@ color: var(--secondary-colour);
 .nav-elements ul a {
   font-size: 0.95rem;
   font-weight: 400;
-  color: var(--secondary-colour);
+  color: var(--primary-colour);
   text-decoration: none;
 }
 
 .nav-elements ul a.active {
-  color: var(--secondary-colour);
-  font-weight: 400;
+  color: var(--primary-colour);
+  font-weight: 600;
   position: relative;
 }
 
 .nav-elements ul a:hover {
-  color: var(--accent-colour);
+  color: var(--dark-accent-colour);
 }
 
 .nav-elements ul a.active::after {
   content: '';
   position: absolute;
-  bottom: -3px;
+  bottom: -5px;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: 3px;
   background-color: var(--secondary-colour);
 }
+
+/* End of simple header */
 
 @media (max-width: 768px) {
   .nav-elements ul li:not(:last-child) {
@@ -303,11 +393,11 @@ color: var(--secondary-colour);
   h1 {
     font-size: 1.8rem;
     line-height: 2rem;
-    
+
     padding: 0 15px 0 15px;
     margin: 0;
   }
-  
+
   .btn {
     /* border: solid 1px var(--secondary-colour);
     background-color:var(--main-bg-colour); */
@@ -322,21 +412,21 @@ color: var(--secondary-colour);
     transition: all 150ms ease;
     width:fit-content;
     margin: 0 0 0 15px; */
-   
+
     &:hover:not(:disabled) {
       background-color: turquoise;
     }
-   
+
     &:active:not(:disabled) {
       background-color: var(--primary-colour);
     }
-   
+
     &.btn:hover {
       background-color:var(--secondary-colour);
       border: solid 1px var(--secondary-colour);
       color: var(--main-bg-colour)
     }
-   
+
     &.btn.disabled {
       opacity: 0.5;
       cursor: not-allowed;
@@ -351,8 +441,8 @@ color: var(--secondary-colour);
   .nav-elements {
     position: absolute;
     right: 0;
-    top: 60px;
-    background-color: var(--main-colour);
+    top: 100px;
+    background-color: var(--light-main-bg-colour);
     width: 0px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease-in;
@@ -431,8 +521,9 @@ color: var(--secondary-colour);
   padding: 5px;
   width: 240px;
   margin:0 0 0 30px;
-  background-color: rgb(23, 27, 52);
+  /* background-color: white; */
   border-radius: 15px;
+  border: 0.5px solid var(--primary-darker);
 }
 
 .profile-image {
@@ -569,54 +660,3 @@ button span {
   left: 100%;
   top: -7px;
 }
-
-/* UNUSED CSS */
-/* HEADER */
-/* 
-.Header-wrapper {
-  background-color: var(--main-colour);
-  height: 5vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px 30px 10px 0px;
-}
-
-.Header-item{
-  font-size: 0.8rem;
-  font-weight:400;
-  text-align: center;
-  padding: 20px;
-  color: white;
-  width:10%;
-  
-  &.Header-item:hover {
-    background-color: var(--primary-colour);
-  }
-}
-
-@media (max-width: 600px) {
-  .Header-item {
-    width:30%;
-  }
-}
-
-@media (max-width: 900px) {
-  .Header-item {
-    width:30%;
-  }
-} */
-
-/* FOOTER */
-
-/* .Footer-wrapper {
-  margin-top: auto;
-  height: 6vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: left;
-  font-size: 0.8rem;
-  color: white;
-  padding: 10px 30px 10px 30px;
-} */

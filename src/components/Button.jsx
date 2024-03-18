@@ -18,12 +18,12 @@ function Button({ buttonText, buttonLink, backgroundColor, color, buttonFunc, bu
     else{
         insertButtonClass=buttonClassName
     }
-    
+
     return (
-        <a target="_blank" href={buttonLink}>
-        <button 
-        className={insertButtonClass} 
-        style={style} 
+        <a target="_blank" rel="noreferrer" href={buttonLink}>
+        <button
+        className={insertButtonClass}
+        style={style}
         onClick={buttonFunc}>
         {buttonText}
         </button>

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ToggleImages from './Toggle.jsx'
 
 {/*import { ReactComponent as Hamburger } from '../assets/logo.svg'; */}
@@ -18,14 +18,14 @@ const Navbar = () => {
       setActive((previousStar) => {
         return !previousStar
       })
-   } 
-   
+   }
+
   // Eventlistener with useEffect for sticky menu
   const [stickyClass, setStickyClass] = useState('');
   const [stickyDesktop, setStickyDesktop] = useState('menu-icon');
   const [stickyMobile, setStickyMobile] = useState('menu-icon');
 
-  const currentScrollPos = window.scrollY;
+  // const currentScrollPos = window.scrollY;
 
   useEffect(() => {
     window.addEventListener('scroll', stickNavbar);
@@ -33,7 +33,7 @@ const Navbar = () => {
   }, []);
 
   const stickNavbar = () => {
-    
+
     if (window !== undefined) {
       let windowHeight = window.scrollY;
       windowHeight > 80 ? setStickyDesktop('sticky-desktop') : setStickyDesktop('menu-icon');
@@ -48,17 +48,34 @@ const Navbar = () => {
       behavior: 'smooth',
     });
   };
-  
+
+  const [ darkMode, setDarkMode ] = React.useState(false)
+
+    React.useEffect(() => {
+      const body = document.documentElement
+      const toggle = document.querySelector('.toggle-inner')
+
+      // If dark mode is enabled - adds classes to update dark-mode styling.
+      // Else, removes and styling is as normal.
+      if( darkMode === true ) {
+        body.classList.add('dark-mode')
+        toggle.classList.add('toggle-active')
+      } else {
+        body.classList.remove('dark-mode')
+        toggle.classList.remove('toggle-active')
+      }
+    }, [darkMode])
+
   return (
     <>
-    
-    <div className={`nav-elements ${stickyDesktop} mobile-none`}>
+
+      <div className={`nav-elements ${stickyDesktop} mobile-none`}>
           <ul>
               <p style={{lineHeight:"1.8rem"}}><NavLink to="/">Home</NavLink><br />
               <NavLink to="/projects">Projects</NavLink><br />
               <NavLink to="/cheatsheet">Cheatsheet</NavLink><br />
               <NavLink to="/about">About</NavLink><br />
-              <NavLink to="/contact">Contact</NavLink><br />              
+              <NavLink to="/contact">Contact</NavLink><br />
               </p>
           </ul>
     </div>
@@ -70,11 +87,11 @@ const Navbar = () => {
     </div>
 
     <nav className={`navbar`}>
-      
+
       <div className="container-header">
         {/*  Hamburger  */}
         <div className={`menu-icon ${stickyClass}`} onClick={handleShowNavbar}>
-        <ToggleImages active={active} handleChangeActive={handleChangeActive}/>
+        <ToggleImages darkMode={darkMode} active={active} handleChangeActive={handleChangeActive}/>
         </div>
 
         <div className={`nav-elements ${showNavbar && 'active'}`} onClick={handleShowNavbar}>
@@ -96,10 +113,17 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        
+
+        <div
+            id="toggle"
+            onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)}
+        >
+          <div className="toggle-inner"/>
+        </div>
+
       </div>
     </nav>
-  
+
     </>
   )
 }

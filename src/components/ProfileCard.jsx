@@ -1,4 +1,4 @@
-const ProfileCard = ({ name, place, role, skills, bio, imageUrl, socialIcons }) => {
+const ProfileCard = ({ name, place, role, bio, imageUrl, socialIcons }) => {
     return (
       <div className="profile-card">
         <img src={imageUrl} alt={`${name}'s profile`} className="profile-image" />
@@ -24,11 +24,10 @@ const ProfileCard = ({ name, place, role, skills, bio, imageUrl, socialIcons }) 
         </div>
 
         <p>{role}</p>
-        {/* <p>Skills: {skills.join(', ')}</p> */}
         <p>{bio}</p>
-        
+
       </div>
     );
   };
-  
+
   export default ProfileCard;

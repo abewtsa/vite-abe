@@ -13,7 +13,7 @@ const Projects = () => {
     >
     <p>YesFresh! is a design for a food delivery-catering hybrid application. It offers the features of being able to select menus from your local restaurants for planned scheduled deliveries.</p>
     <Button
-        buttonClassName='btn'
+        buttonClassName='dark-mode btn'
         buttonText='See in Figma'
         buttonFunc=''
         buttonLink='https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design'
