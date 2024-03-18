@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Homepage from './pages/Home.jsx'
 import Projects from './pages/Projects.jsx'
@@ -20,7 +20,7 @@ function App() {
     <div style={{display:'flex',flexDirection:'column',minHeight:'95vh'}}>
     <BrowserRouter>
       <Navbar />
- 
+
       <Routes>
       <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />
@@ -36,7 +36,7 @@ function App() {
     </div>
 
     <footer>
-    Built with React in Vite 
+    Built with React in Vite
   </footer>
   </>
   )
@@ -51,7 +51,7 @@ VITA 0.1 Documentations
 README
 ------------------------------------
 Built with Vite and React, how to use
-1. Install stack with npm, list below 
+1. Install stack with npm, list below
 2. Create or modify page jsx and add Components or Pages, add Props to access Components
 3. Styling handled in App.css with SASS
 4. React router for single page simulation, virtual DOM loading of pages
