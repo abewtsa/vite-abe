@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Glam Up My Markup</title>
+</head>
+<body>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Mako&display=swap');
+
+:root {
+  --background:#4361ee;
+  --main-colour: #1e90ff;
+  --primary-colour:#3a0ca3;
+  --secondary-colour:#4361ee;
+  --accent-colour:#f72585;
+  --white: #ffffff;
+  font-size:1rem;
+}
+
+body {
+    background-color:#efefef;
+}
+
+  section {
+    margin:20px;
+    padding:30px;
+    width:50%;
+    background-color:#fefefe;
+    font-size: 1rem;
+    min-width:300px;
+    /* border: 6px solid var(--primary-colour); */
+    border-radius:6px;
+  }
+
+  @media screen and (max-width: 767px) {
+      section {
+          width: 300px; /* Width for mobile screens */
+      }
+  }
+
+  @media screen and (min-width: 768px) {
+      section {
+          width: 420px; /* Width for desktop screens */
+      }
+  }
+
+  h1, label, .dropdown-items, textarea {
+    font-family: "Inter", sans-serif;
+  }
+
+  label{
+    font-weight: 300;
+    padding:20px 0 10px 0;
+  }
+
+  h1 {
+    margin:auto;
+    font-size:2.2rem;
+  }
+
+  form{
+    display:flex;
+    flex-direction:column;
+  }
+
+  button {
+    border-radius:20px;
+    background-color:#4361ee40;
+    border:2px solid var(--primary-colour);
+    min-width:120px;
+    margin:auto;
+    padding:10px;
+    margin-top:15px;
+    font-size:1rem;
+  }
+
+  button:hover {
+    background-color:var(--accent-colour);
+    border:2px solid var(--accent-colour);
+    color:white;
+  }
+
+  /* Dropdown replacement CSS */
+
+  .dropdown{
+    font-size: 1rem;
+    border: 2px solid var(--primary-colour);
+    border-radius:8px;
+    width:240px;
+    text-align:left;
+    background-color: #efefef;
+    cursor: pointer;
+    position: absolute;
+    margin-top: -40px;
+    z-index:50;
+  }
+
+  .dropdown:hover{
+    background-color: #fff;
+  }
+
+  .dropdown:focus-within, textarea:focus{
+    border: 2px solid var(--accent-colour);
+    outline: none;
+  }
+
+  .dropdown-toggle-button{
+    border:0px;
+    font-size: 1rem;
+    width:240px;
+    text-align: left;
+    margin-top: 0px;
+    cursor: pointer;
+    border:2px solid #efefef;
+    background-color:#efefef;
+  }
+
+  .dropdown-toggle-button:hover{
+    background-color:#fff;
+    border-color: #fff;
+    color:#000;
+  }
+
+  .dropdown-toggle-button:focus-within{
+    background-color:#fff;
+    border-color:#fff;
+  }
+
+  .dropdown:focus-within{
+    background-color:#fff;
+  }
+
+  .dropdown-item, .dropdown-items{
+    padding:5px;
+  }
+
+  .dropdown-item:hover{
+    background-color:var(--accent-colour);
+    color:var(--white);
+  }
+
+  textarea {
+    border: 2px solid var(--primary-colour);
+    border-radius:8px;
+    resize:none;
+    height:120px;
+    font-size:1rem;
+    background-color:#efefef;
+    padding:10px;
+    }
+
+  textarea:focus{
+    background-color:#fefefe;
+    }
+  }
+
+  /* Chevrons CSS only */
+
+  .chevron {
+    content: '';
+  }
+
+  .chevron::after {
+	border-style: solid;
+	border-width: 0.10em 0.10em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	width: 0.45em;
+	left: 13em;
+	position: absolute;
+	top: 0.75em;
+	transform: rotate(135deg);
+	vertical-align: top;
+	margin-left:10px;
+  }
+
+  .spacer{
+    width: 100%;
+    height:40px;
+  }
+
+/* MODAL CSS */
+
+.modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+    /* Close button style */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+</style>
+
+<!-- START OF HTML   -->
+
+<section id="camp-activities-inquiry">
+    <h1>Camp Activities Inquiry</h1>
+    <form action="/submit-form" method="POST">
+        <label for="activity-select">Which camp activities are you most looking forward to?</label>
+        <select id="activity-select" name="activity">
+            <option value="">--Please choose an option--</option>
+            <option value="hiking">Hiking</option>
+            <option value="canoeing">Canoeing</option>
+            <option value="fishing">Fishing</option>
+            <option value="crafts">Crafts</option>
+            <option value="archery">Archery</option>
+        </select>
+
+        <label for="food-allergies">Food Allergies (if any)</label>
+        <textarea id="food-allergies" name="food_allergies" rows="4" cols="50"></textarea>
+
+        <label for="additional-info">Additional things the counselor should know</label>
+        <textarea id="additional-info" name="additional_info" rows="4" cols="50"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- START OF JS     -->
+
+<script>
+
+// Get the original select element
+var originalSelect = document.getElementById("activity-select");
+
+// Create spacer div to space out elements for the absolute positioned dropdown
+var dropdownWrapper = document.createElement("div");
+
+var spacer = document.createElement("div");
+spacer.classList.add("spacer");
+
+// Create a new div for the recreated dropdown
+var newDropdown = document.createElement("div");
+newDropdown.classList.add("dropdown");
+
+// Create a new button for the dropdown toggle
+var ToggleButton = document.createElement("button");
+ToggleButton.classList.add("dropdown-toggle-button", "chevron");
+ToggleButton.setAttribute('type', 'button');
+ToggleButton.textContent = "Please choose an option";
+
+// Create a new div for the dropdown items that will be togglet by ToggleButton
+var dropdownItems = document.createElement("div");
+dropdownItems.classList.add("dropdown-items");
+
+// Get the options of the original select with an array
+var options = Array.from(originalSelect.querySelectorAll("option"));
+var originalValues = options.map(option => option.value); // Store original select option values
+
+// Change the empty first value to "Please select option" for ToggleButton.textContent to maintain consistency in the original values array
+if (originalValues.length > 0) {
+    originalValues[0] = "Please select option";
+}
+
+// Check if the first option exists and its value is not "None" and change it to "None" in the recreated array
+if (options.length > 0 && options[0].value !== "None") {
+    // Change the value of the first option to "None"
+    options[0].value = "None";
+    options[0].textContent = "None";
+}
+
+// Loop through options of the original select and create corresponding dropdown items
+options.forEach(function(option, index) {
+    var dropdownItem = document.createElement("div");
+    dropdownItem.textContent = option.textContent;
+    dropdownItem.dataset.value = option.value;
+    dropdownItem.classList.add("dropdown-item");
+
+    dropdownItem.addEventListener("click", function() {
+        ToggleButton.textContent = option.textContent;
+        originalSelect.value = option.value; // Update original select value
+        console.log("clicked" + option.value);
+
+        // If "None" is selected, change ToggleButton value to the recorded first value
+        // if (option.value === "None") {
+        //     ToggleButton.textContent = originalValues[0];
+        // }
+    });
+
+    dropdownItems.appendChild(dropdownItem);
+});
+
+// Append toggle button and dropdown items to the recreated dropdown
+newDropdown.appendChild(ToggleButton);
+newDropdown.appendChild(dropdownItems);
+
+// Add event listener to the ToggleButton to toggle visibility of dropdownItems
+ToggleButton.addEventListener("click", function() {
+  if (dropdownItems.style.display === "none") {
+    dropdownItems.style.display = "block"; // Show dropdownItems
+  } else {
+    dropdownItems.style.display = "none"; // Hide dropdownItems
+  }
+});
+
+// Add global event listener
+document.body.addEventListener("click", function(event) {
+  // Check if the clicked element is not inside the newly created dropdown
+  if (!newDropdown.contains(event.target)) {
+    dropdownItems.style.display = "none"; // Hide dropdownItems
+  }
+});
+
+dropdownItems.addEventListener("click", function() {
+  if (dropdownItems.style.display === "none") {
+    dropdownItems.style.display = "block"; // Show dropdownItems
+  } else {
+    dropdownItems.style.display = "none"; // Hide dropdownItems
+  }
+});
+
+// Hide the original select element
+originalSelect.style.display = "none";
+
+// Hide dropdownItems on initial load
+dropdownItems.style.display = "none";
+
+// Append spacer to dropdownWrapper
+dropdownWrapper.appendChild(spacer);
+
+// Append newDropdown to dropdownWrapper
+dropdownWrapper.appendChild(newDropdown);
+
+// Append the recreated dropdown after the original select element
+originalSelect.parentNode.insertBefore(dropdownWrapper, originalSelect.nextSibling);
+
+// START OF MODAL
+//
+// Create the modal and its content outside of the event listener
+var modal = document.createElement("div");
+modal.className = "modal";
+modal.setAttribute("id", "myModal");
+
+var modalContent = document.createElement("div");
+modalContent.className = "modal-content";
+
+var closeSpan = document.createElement("span");
+closeSpan.className = "close";
+closeSpan.innerHTML = "&times;";
+closeSpan.onclick = closeModal;
+
+var header = document.createElement("h2");
+header.textContent = "Form Data";
+
+var formDataDiv = document.createElement("div");
+formDataDiv.id = "formData";
+modalContent.appendChild(closeSpan);
+modalContent.appendChild(header);
+modalContent.appendChild(formDataDiv);
+
+modal.appendChild(modalContent);
+document.body.appendChild(modal);
+
+// Attach event listener to the submit button
+var submitButton = document.querySelector("form button[type='submit']");
+submitButton.addEventListener("click", function(event) {
+    // Prevent default form submission
+    event.preventDefault();
+
+    // Get form data
+    var form = this.form; // "this.form" refers to the form associated with the clicked submit button
+    var formData = new FormData(form);
+
+    // display the modal when submit button is clicked
+    modal.style.display = "block";
+
+    // Display form data in modal
+    formData.forEach(function(value, key) {
+        var p = document.createElement("p");
+        p.textContent = key + ": " + value;
+        formDataDiv.appendChild(p);
+    });
+
+});
+
+function closeModal() {
+    // Clear previous form data
+    var formDataDiv = document.getElementById("formData");
+    formDataDiv.innerHTML = "";
+    modal.style.display = "none";
+}
+
+// Close the modal when clicking outside of it
+window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+        console.log (event.target);
+        closeModal();
+    }
+}
+
+</script>
+
+</body>
+</html>
+
+<!-- WIP log
+1. select and option difficult to style, we use JS to recreate the dropdown instead
+by recreating the dropdown there is a lot of ideas and things we can do, one idea is to recreate the dropdown into an interactive icon carousel for selection, but after all we want a neat and faithful recreation of the dropdown select element.
+
+2. Some array operations to store the original values of the dropdown and modifying it as we want: reformatting the first value and default Button text.
+ - change the Please Select Option in list to None for UX
+ - change the empty value to Please Select Option for consistency
+
+2. button submit form - needs to reassign type to new button replacing dropdown
+3. new to create a response to button submit, as to not get an empty page, this is achieved through intercepting the submit button form response and triggering a modal instead
+4. create a modal to display information that has been input in the form
+
+
+https://codepen.io/zebateira/pen/zrvwGR
+https://codepen.io/yuanchuan/pen/BZdGZW
+https://codepen.io/tommyho/pen/MmBRbB
+-->
