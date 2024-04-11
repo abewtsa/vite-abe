@@ -1,6 +1,6 @@
 import Section from '../components/Section.jsx';
 import Projects from './Projects.jsx';
-import Cheatsheet from './Cheatsheet.jsx';
+// import Cheatsheet from './Cheatsheet.jsx';
 
 export default function Home() {
 
@@ -15,9 +15,9 @@ return (
 
       textcopy="Hello and welcome! 👋
 
-      For the past 5 years, my UI/UX work has been largely in enterprise and macro UX/CX, with hands-on involvement in content update, management and micro UX design and advisory for one of the large Australian non for profit.
+      For the past 5 years, my UI/UX work has been largely in enterprise CX, with hands-on involvement in content update, management and UX design for one of the largest Australian non for profit.
 
-      My projects and designs that you can explore in this site revolve around Figma, React and NextJS. While this site is still a work in progress, I'm hopeful that you will find useful information.
+      My projects and designs that you can explore in this site revolve around Figma prototypes, React and NextJS. While this site is still a work in progress, I'm hopeful that you will find useful information.
 
       Figma links and projects are listed below, and you can reach out to me by email."
       >
