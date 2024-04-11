@@ -4,19 +4,20 @@ import Link from "./Link.jsx";
 
 // add Button and Text component to Card so that it doesn't need to be called all the time
 
-function Section({ header,textcopy,buttonClassName,buttonText,buttonFunc,buttonLink,linkClassName, link, linkText, children }) {
+function Section({ header, subheader, textcopy,buttonClassName,buttonText,buttonFunc,buttonLink,linkClassName, link, linkText, children }) {
 
   return (
-    
+
     <>
     <div className="container section-card">
 
-      <Text 
-      header={header} 
+      <Text
+      header={header}
+      subheader={subheader}
       textcopy={textcopy}
       />
 
-      <Link 
+      <Link
       linkClassName={linkClassName}
       link={link}
       linkText={linkText}
@@ -43,11 +44,11 @@ export default Section;
 //     return (
 //     <ul className="list">
 //     {todos.length === 0 && "No todos"}
-    
+
 //     {/* generate component and pass props to Component */}
-//     {todos.map (todo =>{ 
+//     {todos.map (todo =>{
 //       return <TodoItem {...todo} key={todo.id} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
-//     })}  
+//     })}
 //   </ul>
 //   )
 // }

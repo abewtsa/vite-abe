@@ -1,5 +1,5 @@
-@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
-@import url('https://fonts.cdnfonts.com/css/hind-guntur');
+/* @import url('https://fonts.cdnfonts.com/css/sf-pro-display'); */
+@import url('https://fonts.cdnfonts.com/css/public-sans');
 
 #root {
   width:100lh;
@@ -33,9 +33,8 @@ color:var(--primary-colour)
 
 h1 {
   font-size: 1.8rem;
-  font-family: 'SF Pro Display', sans-serif;
-  font-weight:600;
-  line-height: 2.2rem;
+  font-weight:700;
+  line-height: 2rem;
   color:var(--primary-colour);
   padding: 0 0 0 15px;
   margin: auto;
@@ -43,11 +42,19 @@ h1 {
 
 h2 {
   font-size: 1.4rem;
-  font-family: 'SF Pro Display', sans-serif;
   font-weight:600;
   line-height: 1rem;
   color:var(--primary-colour);
   padding: 0 0 0 15px;
+  margin: auto;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight:400;
+  line-height: 1.4rem;
+  color:var(--primary-colour);
+  padding: 10px 15px 10px 15px;
   margin: auto;
 }
 
@@ -64,7 +71,7 @@ h2 {
     background-color: var(--main-bg-colour);
     }
 
-    title, h1, h2, p, footer, .sticky-mobile, .title {
+    title, h1, h2, h3, p, footer, .sticky-mobile, .title {
     color:var(--dark-primary-colour)
     }
 
@@ -123,8 +130,8 @@ color:var(--primary-colour)
 }
 
 p {
-font-size:1.1rem;
-line-height: 1.5rem;
+font-size:1rem;
+line-height: 1.4rem;
 font-weight:300;
 color:var(--primary-colour);
 padding: 0 15px 0 15px;
@@ -137,7 +144,7 @@ white-space: pre-line;
 
 body{
   background-color: var(--main-bg-colour);
-  font-family: 'Hind Guntur', sans-serif;
+  font-family: 'Public Sans', sans-serif;
   overflow-x: hidden;
 }
 
@@ -386,16 +393,21 @@ a:hover {
 
 @media (max-width: 600px) {
   p {
-    font-size:1.3rem;
-    line-height:1.6rem;
+    font-size:1rem;
+    line-height:1.4rem;
+    font-weight:300;
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 2rem;
-
     padding: 0 15px 0 15px;
     margin: 0;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
   }
 
   .btn {
@@ -403,7 +415,7 @@ a:hover {
     background-color:var(--main-bg-colour); */
     font-size: 1.2rem;
     line-height: 1.8rem;
-    color: #fff;
+    /* color: #fff; */
     border-radius: 8px;
     font-weight: 600;
     padding: 10px 30px;
