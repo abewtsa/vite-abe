@@ -1,3 +1,4 @@
+// import HeroSection from '../components/HeroSection.jsx';
 import Section from '../components/Section.jsx';
 import Projects from './Projects.jsx';
 // import Cheatsheet from './Cheatsheet.jsx';
@@ -6,12 +7,14 @@ export default function Home() {
 
 return (
 <>
+  {/* <HeroSection/> */}
+
   <div className='main-wrapper'>
     <div className='container-680'>
 
       <Section
       header="Abraham Wongso - UX / UI / Front End"
-      subheader="UX/UI Designer with great interest in Front End technologies and delivering great digital experiences."
+      subheader="UX/UI Designer with a passion in front end technologies and delivering great digital experiences."
 
       textcopy="Hello and welcome! 👋
 

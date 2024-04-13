@@ -1,7 +1,7 @@
 import Section from '../components/Section.jsx';
-import Button from "../components/Button.jsx";
-import Text from "../components/Text.jsx";
-import Link from '../components/Link.jsx';
+// import Button from "../components/Button.jsx";
+// import Text from "../components/Text.jsx";
+// import Link from '../components/Link.jsx';
 import AccordionList from '../components/Collapse.jsx';
 
 const Cheatsheet = () => {
@@ -14,7 +14,8 @@ const Cheatsheet = () => {
   header="Tools"
   // textcopy="Tools and cheatsheets for personal and professional uses"
   >
-  <p><a target="_blank" rel="noreferrer" href="https://materialui.co/">Materialui.co</a> - colours and styles<br />
+  <p>
+  <a target="_blank" rel="noreferrer" href="https://materialui.co/">Materialui.co</a> - colours and styles<br />
   <a target="_blank" rel="noreferrer" href="https://typescale.com/">Typescale</a> - typescale generator<br />
   <a target="_blank" rel="noreferrer" href="https://lottiefiles.com/">LottieFiles</a> - lottie SVG animations<br />
   <a target="_blank" rel="noreferrer" href="https://www.lottielab.com/">LottieLab</a> - lottie editor and creator<br />
@@ -33,7 +34,9 @@ const Cheatsheet = () => {
   <Section
   header="Chrome Extensions"
   >
-  <p><a target="_blank" rel="noreferrer" href="https://chromewebstore.google.com/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma">Web Vitals</a> - audit-in-a-glance for web page performance<br />
+  <p>
+  <a target="_blank" rel="noreferrer" href="https://chromewebstore.google.com/detail/locatorjs/npbfdllefekhdplbkdigpncggmojpefi">LocatorJS</a> - stops wasting time finding code on page - React/Vue only<br />
+  <a target="_blank" rel="noreferrer" href="https://chromewebstore.google.com/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma">Web Vitals</a> - audit-in-a-glance for web page performance<br />
   <a target="_blank" rel="noreferrer" href="https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg">Wappalyzer</a> - look into web page's tech stacks
   </p>
 

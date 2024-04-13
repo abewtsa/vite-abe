@@ -9,6 +9,23 @@ const Projects = () => {
     <div className='container-680'>
 
     <Section
+    header="VIP Delivery - Pizza Hut"
+    >
+    <p>A response to brief, looking into possible UX and UI solutions for a VIP Delivery feature for the Pizza Hut web/mobile application. Lean UX process with focus on seamless integration with current journey and app architecture.</p>
+    <Button
+        buttonClassName='dark-mode btn'
+        buttonText='See in Figma'
+        buttonFunc=''
+        buttonLink='https://www.figma.com/proto/w46vgkkMzp3MhinBjZdQRh/Pizza-Hut---UX%2FUI-Vip-Delivery-Brief-Response?page-id=0%3A1&type=design&node-id=1-250&viewport=413%2C418%2C0.07&t=rOXn88ZpXl1nGNct-1&scaling=contain&starting-point-node-id=1%3A250&mode=design'
+    />
+    <p>
+    <a className="special-link" target="_blank" rel="noreferrer" href="https://www.figma.com/proto/w46vgkkMzp3MhinBjZdQRh/Pizza-Hut---UX%2FUI-Vip-Delivery-Brief-Response?page-id=0%3A1&type=design&node-id=1-250&viewport=413%2C418%2C0.07&t=rOXn88ZpXl1nGNct-1&scaling=contain&starting-point-node-id=1%3A250&mode=design">
+    <img width='450px' height='300px' src='https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/VIPdelivery-Cover.jpg'></img></a>
+    </p>
+
+    </Section>
+
+    <Section
     header="Figma Prototype - YesFresh!"
     >
     <p>YesFresh! is a design for a food delivery-catering hybrid application. It offers the features of being able to select menus from your local restaurants for planned scheduled deliveries.</p>
