@@ -6,7 +6,7 @@ const developerData = {
   place: 'Melbourne + Sydney',
   role: 'UX/UI Designer and Frontend Developer',
   bio: 'Likes ☕ , clean design, product development, and meaningful user experience.',
-  imageUrl: 'https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/photo-1.jpg',
+  imageUrl: 'https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/photo-1.JPG',
 
   socialIcons: [
     {

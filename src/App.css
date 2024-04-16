@@ -539,9 +539,11 @@ a:hover {
 }
 
 .profile-image {
-  width:150px;
+  height:120px;
+  width:120px;
   margin: auto;
   border-radius: 50%;
+  object-fit:cover;
 }
 
 .profile-social-icon {

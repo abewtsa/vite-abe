@@ -1,7 +1,11 @@
 const ProfileCard = ({ name, place, role, bio, imageUrl, socialIcons }) => {
     return (
       <div className="profile-card">
-        <img src={imageUrl} alt={`${name}'s profile`} className="profile-image" />
+        <img
+          src={imageUrl}
+          alt={`${name}'s profile`}
+          className="profile-image"
+          />
         <h2>{name}</h2>
         <p>{place}</p>
 
