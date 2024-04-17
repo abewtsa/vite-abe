@@ -8,7 +8,6 @@ import About from './pages/About.jsx'
 import Cheatsheet from './pages/Cheatsheet.jsx'
 import './App.css'
 
-// import Nav from './components/Header/DropdownHeader/Nav.jsx'
 import Navbar from './components/Header/SimpleHeader/navbar.jsx'
 
 function App() {

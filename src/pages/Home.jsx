@@ -1,4 +1,4 @@
-// import HeroSection from '../components/HeroSection.jsx';
+import HeroSection from '../components/HeroSection.jsx';
 import Section from '../components/Section.jsx';
 import Projects from './Projects.jsx';
 // import Cheatsheet from './Cheatsheet.jsx';
@@ -7,18 +7,16 @@ export default function Home() {
 
 return (
 <>
-  {/* <HeroSection/> */}
+  <HeroSection/>
 
   <div className='main-wrapper'>
     <div className='container-680'>
 
       <Section
-      header="Abraham Wongso - UX / UI / Front End"
-      subheader="UX/UI Designer with a passion in front end technologies and delivering great digital experiences."
+      header="Hello and welcome! 👋"
+      subheader="I'm a UX/UI Designer with a passion for front end and delivering great digital experiences."
 
-      textcopy="Hello and welcome! 👋
-
-      For the past 5 years, my UI/UX work has been largely in enterprise CX, with hands-on involvement in content update, management and UX design for one of the largest Australian non for profit.
+      textcopy="For the past 5 years, my UI/UX work has been largely in enterprise CX, with hands-on involvement in content update, management and UX design for one of the largest Australian non for profit.
 
       My projects and designs that you can explore in this site revolve around Figma prototypes, React and NextJS. While this site is still a work in progress, I'm hopeful that you will find useful information.
 

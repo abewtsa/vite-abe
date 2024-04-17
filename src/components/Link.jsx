@@ -1,21 +1,11 @@
 function Link(props) {
-    
+
     const { linkText, link, linkClassName } = props;
 
     const insertClassName = linkClassName || 'element-none';
-
-    // let insertClassName
-
-    // if (linkClassName==null){
-    //     insertClassName="element-none"
-    // }
-    // else{
-    //     insertClassName=linkClassName
-    // }
-
     return (
         <>
-        <a target="_blank" href={link}>
+        <a target="_blank" href={link} rel="noreferrer">
         <p className={insertClassName}>{linkText}</p>
         </a>
         </>

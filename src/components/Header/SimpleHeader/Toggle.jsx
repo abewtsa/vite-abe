@@ -23,7 +23,7 @@ function ToggleImages({ darkMode, active, handleChangeActive }) {
             />
           )}
         </div>
-        <div className="title" onClick={() => handleChangeActive()}>Abraham Wong</div>
+        <div className="title" onClick={() => handleChangeActive()}>MENU</div>
       </>
     );
   }
