@@ -230,7 +230,7 @@ a:hover {
 /*Base MUI mods*/
 
 .btn {
-  border: solid 1px var(--secondary-colour);
+  border: solid 2px var(--secondary-colour);
   background-color:var(--light-main-bg-colour);
   font-size: 1rem;
   line-height: 1.3rem;
@@ -254,7 +254,7 @@ a:hover {
 
   &.btn:hover {
     background-color:var(--secondary-colour);
-    border: solid 1px var(--secondary-colour);
+    border: solid 2px var(--secondary-colour);
     color: var(--main-bg-colour)
   }
 
