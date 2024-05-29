@@ -1,82 +1,84 @@
 import { useState } from "react";
-import FloatCard from "./FloatCard"; // Adjust the import path as necessary
-
-const cardData = [
-  {
-    name: "UX Card No.1 ",
-    icon: "https://www.svgrepo.com/show/430362/ux-line-circle.svg",
-    title: "This is a floating UX Card",
-    content: "Content of floating UX Card",
-    footer: "",
-  },
-  {
-    name: "Front End Card",
-    icon: "https://www.svgrepo.com/show/533324/code.svg",
-    title: "This is a Front End Card",
-    content: "A lot of code, from GPT",
-    footer: "",
-  },
-  {
-    name: "UX Card No.2",
-    icon: "https://www.svgrepo.com/show/430362/ux-line-circle.svg",
-    title: "Another UX Card Portfolio",
-    content: "A lot of code, from GPT",
-    footer: "",
-  },
-  {
-    name: "Figma Card",
-    icon: "https://www.svgrepo.com/show/532271/figma.svg",
-    title: "Figma Card for Prototype portfolio",
-    content: "A lot of code, from GPT",
-    footer: "",
-  },
-  {
-    name: "HOOPS Card",
-    icon: "https://www.svgrepo.com/show/511300/spiral-32.svg",
-    title: "This is only for HOOPS",
-    content: "A lot of code, from GPT",
-    footer: "",
-  },
-];
+import FloatCard from "./FloatCard";
+import BlogPage from "./BlogPage";
+import { blogs } from "./BlogData";
 
 const FloatCardContainer = () => {
-  // The initial state is set using cardData.map(() => 1), which creates an array of the same length as 'cardData',
-  // with each element initialized to 1. This means initially, all cards will have a z-index of 1.
-  const [zIndexes, setZIndexes] = useState(cardData.map(() => 1));
+  const [zIndexes, setZIndexes] = useState(Array(blogs.length).fill(1)); // Initialize zIndexes array
+  const [selectedBlog, setSelectedBlog] = useState(null); // State to track selected blog
 
-  const handleHover = (index, zIndex) => {
-    console.log("Hovering over card", index, "with zIndex", zIndex);
+  const handleHover = (index) => {
     setZIndexes((prevZIndexes) => {
-      // Create a shallow copy of the previous zIndexes array to avoid directly mutating the state.
       const newZIndexes = [...prevZIndexes];
-      // Find the highest zIndex in the current array and set the zIndex of the hovered card to one more than this value.
-      // This ensures that the hovered card will be brought to the front.
       newZIndexes[index] = Math.max(...prevZIndexes) + 1;
       return newZIndexes;
     });
   };
 
+  const handleOpenBlog = (blog) => {
+    setSelectedBlog(blog);
+  };
+
+  const handleCloseBlog = () => {
+    setSelectedBlog(null);
+  };
+
   return (
-    <div id="newHeroWrapper" className="float-hero">
-      <div id="floatCardContainer" style={{ width: "60%" }}>
-        {cardData.map((card, index) => (
-          <FloatCard
-            key={index}
-            {...card}
-            handleHover={(zIndex) => handleHover(index, zIndex)}
-            zIndex={zIndexes[index]}
+    <>
+      <div id="floatCardHero" className="float-hero">
+        <div id="floatCardContainer" className="float-card-container">
+          {blogs.map((blog, index) => (
+            <div key={index}>
+              <FloatCard
+                title={
+                  <a href="#" onClick={() => handleOpenBlog(blog)}>
+                    {blog.title}
+                  </a>
+                }
+                handleHover={(zIndex) => handleHover(index, zIndex)}
+                zIndex={zIndexes[index]}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* <div id="svgContainer" className="float-card-cup">
+          <img
+            id="floatCardCup"
+            src="https://raw.githubusercontent.com/abewtsa/vite-abe/d958030cbd995c4ab5136c8afef78ae6270073d6/public/coffee_cup.svg"
+            className="float-hero-coffee-svg"
+            alt=""
           />
-        ))}
+          <img
+            id="candy"
+            src="https://raw.githubusercontent.com/abewtsa/vite-abe/89d45dd1d519654657a7c5b31d8fc896ac4145f3/public/candy.svg"
+            className="other-svg"
+            alt=""
+          />
+          <img
+            id="pencil"
+            src="https://raw.githubusercontent.com/abewtsa/vite-abe/89d45dd1d519654657a7c5b31d8fc896ac4145f3/public/pencil.svg"
+            className="other-svg"
+            alt=""
+          />
+          <img
+            id="note"
+            src="https://raw.githubusercontent.com/abewtsa/vite-abe/89d45dd1d519654657a7c5b31d8fc896ac4145f3/public/note.svg"
+            className="other-svg"
+            alt=""
+          />
+        </div> */}
       </div>
 
-      <div id="heroCoffeeCup" className="float-hero-coffee">
-        <img
-          src="https://raw.githubusercontent.com/abewtsa/vite-abe/d958030cbd995c4ab5136c8afef78ae6270073d6/public/coffee_cup.svg"
-          className="float-hero-coffee-svg"
-          alt="Code Latte"
+      {/* Render BlogPage component as overlay if a blog is selected */}
+      {selectedBlog && (
+        <BlogPage
+          title={selectedBlog.title}
+          content={selectedBlog.content}
+          onClose={handleCloseBlog}
         />
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

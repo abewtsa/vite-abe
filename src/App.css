@@ -1,5 +1,4 @@
-/* @import url('https://fonts.cdnfonts.com/css/sf-pro-display'); */
-@import url("https://fonts.cdnfonts.com/css/public-sans");
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 
 #root {
     width: 100%;
@@ -140,7 +139,6 @@ h3 {
         font-size: 2.5rem;
         color: var(--dark-primary-colour);
     }
-
     .hero-content p {
         font-size: 1.25rem;
         line-height: 1.5rem;
@@ -170,16 +168,18 @@ p {
 
 body {
     background-color: var(--main-bg-colour);
-    font-family: "Public Sans", sans-serif;
+    font-family: "SF Pro Display", sans-serif;
     overflow: hidden;
 }
 
 footer {
+    position: absolute;
     font-size: 0.9rem;
     margin: 0 0 30px 30px;
-    /* height:6vh; */
     color: var(--primary-colour);
     font-weight: 300;
+    bottom: 0;
+    z-index: 0;
 }
 
 img {
@@ -460,13 +460,19 @@ a:hover {
     border: 3px solid var(--dark-main-colour);
     border-radius: 12px;
     background-color: #fff;
-    width: 320px;
-    height: 360px;
+    width: 280px;
+    height: 320px;
     z-index: 20;
 }
 
+.float-card h2 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
 .float-card-icon {
-    width: 40px;
+    width: 35px;
     height: auto;
     pointer-events: none;
 }
@@ -474,23 +480,72 @@ a:hover {
 .float-hero {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     overflow: hidden;
 }
 
-.float-hero-coffee {
-    width: 40%;
-    height: 600px;
+.float-card-cup {
+    height: 400px;
+    margin: auto;
+    /* margin-top: 100px; */
+    z-index: 0;
+}
+
+.float-card-container {
+    height: 400px;
 }
 
 .float-hero-coffee-svg {
-    height: 75%;
+    position: absolute;
+    height: 60%;
+    width: auto;
+    padding: 0px;
+    left: 60%;
+    top: 35%;
+    object-fit: fill;
     overflow: hidden;
+    border: solid 2px red;
+}
+
+.other-svg {
+    position: absolute;
+    height: 150px;
     width: auto;
     margin: auto;
-    margin-top: 100px;
     object-fit: fill;
-    z-index: -1;
+    overflow: hidden;
+}
+
+.hero-content-card {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    width: 55%;
+    padding: 30px;
+    background-color: var(--light-main-bg-colour);
+    border: solid 1px green;
+}
+
+.hero-content-card h1 {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    font-weight: 900;
+    color: var(--primary-colour);
+}
+
+#candy {
+    left: 20%;
+    top: 45%;
+}
+
+#note {
+    left: 45%;
+    top: 70%;
+}
+
+#pencil {
+    left: 10%;
+    top: 65%;
 }
 
 .disable-pointer-events {
@@ -854,9 +909,157 @@ button span {
 
     .float-hero-coffee-svg {
         height: 320px;
-
         border: solid 2px red;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .hero-content-card {
+        width: 88%;
+        padding: 5px;
+        margin: auto;
+    }
+
+    .hero-content-card h1 {
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+
+    .other-svg {
+        width: 80px;
+        display: none;
     }
 }
 
 /* END of @media*/
+
+/* LIGHT BURST */
+.burst-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+ul.bursts {
+    list-style-type: none;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ul.bursts li {
+    width: 3px;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+}
+
+ul.bursts li::after {
+    content: "";
+    width: 5px;
+    background: #222;
+    position: absolute;
+    bottom: 50%;
+    animation: lightBursts 0.4s ease-in-out 0s infinite;
+}
+
+ul.bursts.animate li::after {
+    animation: lightBursts 0.4s ease-in-out 0s infinite;
+}
+
+ul.bursts li.deg0 {
+    transform: rotate(0deg);
+}
+
+ul.bursts li.deg36 {
+    transform: rotate(36deg);
+}
+
+ul.bursts li.deg72 {
+    transform: rotate(72deg);
+}
+
+ul.bursts li.deg108 {
+    transform: rotate(108deg);
+}
+
+ul.bursts li.deg144 {
+    transform: rotate(144deg);
+}
+
+ul.bursts li.deg180 {
+    transform: rotate(180deg);
+}
+
+ul.bursts li.deg216 {
+    transform: rotate(216deg);
+}
+
+ul.bursts li.deg252 {
+    transform: rotate(252deg);
+}
+
+ul.bursts li.deg288 {
+    transform: rotate(288deg);
+}
+
+ul.bursts li.deg324 {
+    transform: rotate(324deg);
+}
+
+@keyframes lightBursts {
+    10% {
+        height: 0%;
+        bottom: 80%;
+    }
+    30% {
+        height: 10%;
+        bottom: 80%;
+    }
+    0%,
+    90%,
+    100% {
+        height: 0%;
+        bottom: 100%;
+    }
+}
+
+/* BLOG STYLING */
+/* src/BlogPage.css */
+
+.blog-page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.blog-page-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 90%;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

@@ -21,6 +21,7 @@ function App() {
           flexDirection: "column",
           minHeight: "95vh",
           overflow: "hidden",
+          zIndex: "0",
         }}
       >
         <BrowserRouter>

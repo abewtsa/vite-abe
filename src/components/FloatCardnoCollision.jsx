@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 const getRandomOffset = (maxX, maxY) => {
   const variationX = 100; // Adjust the variation as needed
@@ -30,8 +30,6 @@ const FloatCard = ({
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [isAnimating, setIsAnimating] = useState(true);
-  const [collision, setCollision] = useState(false);
-  const draggableRef = useRef(null);
 
   useEffect(() => {
     const maxX = window.innerWidth < 768 ? 300 : 700; // Adjust the threshold and values as needed
@@ -145,39 +143,12 @@ const FloatCard = ({
     handleHover(zIndex);
   };
 
-  useEffect(() => {
-    const checkCollision = () => {
-      const staticDiv = document.getElementById("floatCardCup");
-      const draggableDiv = draggableRef.current;
-
-      if (!staticDiv || !draggableDiv) return;
-
-      const draggableDivRect = draggableDiv.getBoundingClientRect();
-      const staticDivRect = staticDiv.getBoundingClientRect();
-
-      if (
-        draggableDivRect.left < staticDivRect.right &&
-        draggableDivRect.right > staticDivRect.left &&
-        draggableDivRect.top < staticDivRect.bottom &&
-        draggableDivRect.bottom > staticDivRect.top
-      ) {
-        setCollision(true);
-      } else {
-        setCollision(false);
-      }
-    };
-
-    checkCollision();
-  }, [position]);
-
   return (
     <>
       <div
-        ref={draggableRef}
         className={`float-card ${isAnimating ? "animateCard" : ""}`}
         style={{
           transform: `translate(${position.x}px, ${position.y}px) rotate(${rotation}deg)`,
-          backgroundColor: collision ? "blue" : "", // Change background color when collision is detected
           cursor: dragging ? "grabbing" : "grab",
           userSelect: dragging ? "none" : "auto",
           zIndex,
