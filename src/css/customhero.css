@@ -1,0 +1,43 @@
+/* HERO */
+
+.hero-section {
+    position: relative;
+    width: 95%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://raw.githubusercontent.com/abewtsa/vite-abe/master/public/4-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 35%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background-color: var(--light-main-bg-colour);
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-colour);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: var(--primary-colour);
+}

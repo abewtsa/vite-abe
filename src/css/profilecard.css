@@ -1,0 +1,35 @@
+/* PROFILE CARD */
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+    width: 240px;
+    margin: 0 0 0 30px;
+    /* background-color: white; */
+    border-radius: 15px;
+    border: 0.5px solid var(--primary-darker);
+}
+
+.profile-image {
+    height: 120px;
+    width: 120px;
+    margin: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-social-icon {
+    width: 50px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+    .profile-card {
+        width: 86%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}

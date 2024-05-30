@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
+// create initial translate offset to randomly position cards created
 const getRandomOffset = (maxX, maxY) => {
-  const variationX = 100; // Adjust the variation as needed
-  const variationY = 20; // Adjust the variation as needed
+  const variationX = 100;
+  const variationY = 20;
   const offsetX = Math.random() * variationX - variationX * 2;
   const offsetY = Math.random() * variationY - variationY / 2;
   const x = Math.floor(Math.random() * maxX) + offsetX;
@@ -10,6 +11,7 @@ const getRandomOffset = (maxX, maxY) => {
   return { x, y };
 };
 
+// create initial rotation to randomly make cards off center when created
 const getRandomRotation = (maxAngle) => {
   const variation = 5; // Adjust the variation as needed
   const rotation = Math.random() * maxAngle * 2 - 15;
@@ -20,8 +22,8 @@ const FloatCard = ({
   name,
   icon,
   title,
-  content,
-  footer,
+  preview,
+  colour,
   handleHover,
   zIndex,
 }) => {
@@ -30,13 +32,15 @@ const FloatCard = ({
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [isAnimating, setIsAnimating] = useState(true);
-  const [collision, setCollision] = useState(false);
+  // const [collision, setCollision] = useState(false);
   const draggableRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    const maxX = window.innerWidth < 768 ? 300 : 700; // Adjust the threshold and values as needed
-    const initialOffset = getRandomOffset(maxX, 250); // Adjust maxY as needed
-    const initialRotation = getRandomRotation(15); // Adjust maxAngle as needed
+    // provision for mobile offset
+    const maxX = window.innerWidth < 768 ? 300 : 700;
+    const initialOffset = getRandomOffset(maxX, 250);
+    const initialRotation = getRandomRotation(15);
 
     let startTime;
     let animationFrameId;
@@ -143,32 +147,38 @@ const FloatCard = ({
   const handleMouseEnter = () => {
     console.log("Hovering over the card with zIndex", zIndex);
     handleHover(zIndex);
+    setIsHovered(true);
   };
 
-  useEffect(() => {
-    const checkCollision = () => {
-      const staticDiv = document.getElementById("floatCardCup");
-      const draggableDiv = draggableRef.current;
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
-      if (!staticDiv || !draggableDiv) return;
+  // check collision of a card being dragged against a HTML element, and then pass a prop
+  // useEffect(() => {
+  //   const checkCollision = () => {
+  //     const staticDiv = document.getElementById("floatCardCup");
+  //     const draggableDiv = draggableRef.current;
 
-      const draggableDivRect = draggableDiv.getBoundingClientRect();
-      const staticDivRect = staticDiv.getBoundingClientRect();
+  //     if (!staticDiv || !draggableDiv) return;
 
-      if (
-        draggableDivRect.left < staticDivRect.right &&
-        draggableDivRect.right > staticDivRect.left &&
-        draggableDivRect.top < staticDivRect.bottom &&
-        draggableDivRect.bottom > staticDivRect.top
-      ) {
-        setCollision(true);
-      } else {
-        setCollision(false);
-      }
-    };
+  //     const draggableDivRect = draggableDiv.getBoundingClientRect();
+  //     const staticDivRect = staticDiv.getBoundingClientRect();
 
-    checkCollision();
-  }, [position]);
+  //     if (
+  //       draggableDivRect.left < staticDivRect.right &&
+  //       draggableDivRect.right > staticDivRect.left &&
+  //       draggableDivRect.top < staticDivRect.bottom &&
+  //       draggableDivRect.bottom > staticDivRect.top
+  //     ) {
+  //       setCollision(true);
+  //     } else {
+  //       setCollision(false);
+  //     }
+  //   };
+
+  //   checkCollision();
+  // }, [position]);
 
   return (
     <>
@@ -177,19 +187,20 @@ const FloatCard = ({
         className={`float-card ${isAnimating ? "animateCard" : ""}`}
         style={{
           transform: `translate(${position.x}px, ${position.y}px) rotate(${rotation}deg)`,
-          backgroundColor: collision ? "blue" : "", // Change background color when collision is detected
+          // backgroundColor: collision ? "blue" : "", // Change background color when collision is detected
           cursor: dragging ? "grabbing" : "grab",
           userSelect: dragging ? "none" : "auto",
+          backgroundColor: isHovered ? colour : "", // Apply hover color dynamically
           zIndex,
         }}
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
         onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <img src={icon} alt={name} className="float-card-icon" />
         <h2>{title}</h2>
-        <p>{content}</p>
-        <p>{footer}</p>
+        <p>{preview}</p>
       </div>
     </>
   );
@@ -197,6 +208,7 @@ const FloatCard = ({
 
 export default FloatCard;
 
+// math for animation easing
 function easeInOut(t, b, c, d) {
   // t: current time, b: beginning value, c: change in value, d: duration
   t /= d / 2;

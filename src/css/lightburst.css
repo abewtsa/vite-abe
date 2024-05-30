@@ -1,0 +1,92 @@
+/* LIGHT BURST */
+.burst-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+ul.bursts {
+    list-style-type: none;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ul.bursts li {
+    width: 3px;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+}
+
+ul.bursts li::after {
+    content: "";
+    width: 5px;
+    background: #222;
+    position: absolute;
+    bottom: 50%;
+    animation: lightBursts 0.4s ease-in-out 0s infinite;
+}
+
+ul.bursts.animate li::after {
+    animation: lightBursts 0.4s ease-in-out 0s infinite;
+}
+
+ul.bursts li.deg0 {
+    transform: rotate(0deg);
+}
+
+ul.bursts li.deg36 {
+    transform: rotate(36deg);
+}
+
+ul.bursts li.deg72 {
+    transform: rotate(72deg);
+}
+
+ul.bursts li.deg108 {
+    transform: rotate(108deg);
+}
+
+ul.bursts li.deg144 {
+    transform: rotate(144deg);
+}
+
+ul.bursts li.deg180 {
+    transform: rotate(180deg);
+}
+
+ul.bursts li.deg216 {
+    transform: rotate(216deg);
+}
+
+ul.bursts li.deg252 {
+    transform: rotate(252deg);
+}
+
+ul.bursts li.deg288 {
+    transform: rotate(288deg);
+}
+
+ul.bursts li.deg324 {
+    transform: rotate(324deg);
+}
+
+@keyframes lightBursts {
+    10% {
+        height: 0%;
+        bottom: 80%;
+    }
+    30% {
+        height: 10%;
+        bottom: 80%;
+    }
+    0%,
+    90%,
+    100% {
+        height: 0%;
+        bottom: 100%;
+    }
+}

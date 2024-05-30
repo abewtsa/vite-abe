@@ -6,7 +6,7 @@ import Layout from "./pages/Layout.jsx";
 import Contact from "./pages/Contact.jsx";
 import About from "./pages/About.jsx";
 import Cheatsheet from "./pages/Cheatsheet.jsx";
-import "./App.css";
+import "./css/app.css";
 
 // import Navbar from "./components/Header/SimpleHeader/navbar.jsx";
 
@@ -39,7 +39,7 @@ function App() {
         </BrowserRouter>
       </div>
 
-      <footer>Built with React in Vite</footer>
+      <footer>Built with React + Vite</footer>
     </>
   );
 }

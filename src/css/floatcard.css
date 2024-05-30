@@ -1,0 +1,139 @@
+/* FLOAT CARD */
+
+.float-card {
+    position: absolute;
+    border: 3px solid black;
+    border-radius: 12px;
+    background-color: #fff;
+    width: 280px;
+    height: 320px;
+    z-index: 20;
+}
+
+.float-card h2 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+.float-card-icon {
+    width: 35px;
+    height: auto;
+    pointer-events: none;
+}
+
+.float-hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.float-card-cup {
+    height: 400px;
+    margin: auto;
+    z-index: 0;
+}
+
+.float-card-container {
+    height: 400px;
+}
+
+.float-hero-coffee-svg {
+    position: absolute;
+    height: 60%;
+    width: auto;
+    padding: 0px;
+    left: 60%;
+    top: 35%;
+    object-fit: fill;
+    overflow: hidden;
+    border: solid 2px red;
+}
+
+.other-svg {
+    position: absolute;
+    height: 150px;
+    width: auto;
+    margin: auto;
+    object-fit: fill;
+    overflow: hidden;
+}
+
+.hero-content-card {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    width: 55%;
+    padding: 30px;
+    background-color: none;
+}
+
+.hero-content-card h1 {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    font-weight: 900;
+    color: var(--primary-colour);
+}
+
+.hero-bio-container {
+    display: flex;
+    flexdirection: row;
+    gap: 10%;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.hero-bio-block {
+    display: flex;
+    flexdirection: row;
+    height: 30px;
+    gap: 5px;
+}
+
+.hero-bio-icon {
+    height: 20px;
+    width: auto;
+    padding: 0px;
+    margin: auto;
+}
+
+.hero-span {
+    color: #212121;
+    padding: 0px;
+    margin: auto;
+}
+
+#candy {
+    left: 20%;
+    top: 45%;
+}
+
+#note {
+    left: 45%;
+    top: 70%;
+}
+
+#pencil {
+    left: 10%;
+    top: 65%;
+}
+
+.disable-pointer-events {
+    pointer-events: none;
+}
+
+/* @keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+} */
+
+.animateCard {
+    /* animation: slideInFromBottom 0.5s ease forwards; */
+}

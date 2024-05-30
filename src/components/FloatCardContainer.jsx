@@ -4,8 +4,8 @@ import BlogPage from "./BlogPage";
 import { blogs } from "./BlogData";
 
 const FloatCardContainer = () => {
-  const [zIndexes, setZIndexes] = useState(Array(blogs.length).fill(1)); // Initialize zIndexes array
-  const [selectedBlog, setSelectedBlog] = useState(null); // State to track selected blog
+  const [zIndexes, setZIndexes] = useState(Array(blogs.length).fill(1));
+  const [selectedBlog, setSelectedBlog] = useState(null);
 
   const handleHover = (index) => {
     setZIndexes((prevZIndexes) => {
@@ -30,12 +30,17 @@ const FloatCardContainer = () => {
           {blogs.map((blog, index) => (
             <div key={index}>
               <FloatCard
+                name={blog.name} // Added
+                icon={blog.icon} // Added
                 title={
                   <a href="#" onClick={() => handleOpenBlog(blog)}>
                     {blog.title}
                   </a>
                 }
-                handleHover={(zIndex) => handleHover(index, zIndex)}
+                preview={blog.preview}
+                footer={blog.footer}
+                colour={blog.colour}
+                handleHover={() => handleHover(index)}
                 zIndex={zIndexes[index]}
               />
             </div>
@@ -75,6 +80,8 @@ const FloatCardContainer = () => {
         <BlogPage
           title={selectedBlog.title}
           content={selectedBlog.content}
+          colour={selectedBlog.colour}
+          preview={selectedBlog.preview}
           onClose={handleCloseBlog}
         />
       )}
