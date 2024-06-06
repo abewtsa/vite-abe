@@ -7,7 +7,7 @@ const BlogPage = ({ title, content, colour, preview, onClose }) => {
           style={{ backgroundColor: colour }}
         >
           <h1>{title}</h1>
-          <p>{preview}</p>
+          <h3>{preview}</h3>
         </div>
 
         <div className="blog-page-content-right">

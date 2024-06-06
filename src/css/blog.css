@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -25,27 +25,53 @@
 .blog-page-content-left {
     padding: 20px;
     width: 35%;
-    height: 100%;
+    height: auto;
+}
+
+.blog-page-content-left h1 {
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+    padding-top: 2%;
 }
 
 .blog-page-content-right {
     width: 60%;
-    height: 100%;
-    padding: 20px;
+    height: auto;
+    padding: 2%;
+    padding-right: 5%;
     background-color: white;
     overflow-y: auto;
 }
 
+.blog-page-content-right h2 {
+    font-size: 1.8rem;
+    padding-top: 20px;
+}
+
+/* .blog-page-content-right .blog-year {
+    font-size: 0.8rem;
+    color: var(--primary-colour);
+    padding: 15px 0 0px 15px;
+} */
+
+.blog-page-content-right img {
+    max-width: 600px;
+}
+
 .close-button {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 2%;
+    right: 2%;
     background: none;
     border: none;
-    color: #000;
+    color: #757575;
     font-size: 3rem;
     font-weight: 600;
     cursor: pointer;
+}
+
+.close-button:hover {
+    color: #212121;
 }
 
 @media (max-width: 600px) {
@@ -55,12 +81,21 @@
 
     .blog-page-content-left {
         height: 45%;
-        width: 100%;
+        width: auto;
     }
 
     .blog-page-content-right {
         height: 55%;
-        width: 100%;
+        width: auto;
         overflow-y: unset;
+    }
+
+    .blog-page-content-right img {
+        width: 320px;
+    }
+
+    .close-button {
+        top: 15px;
+        right: 15px;
     }
 }

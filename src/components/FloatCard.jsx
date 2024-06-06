@@ -21,9 +21,12 @@ const getRandomRotation = (maxAngle) => {
 const FloatCard = ({
   name,
   icon,
+  iconReverse,
   title,
+  year,
   preview,
   colour,
+  textColour,
   handleHover,
   zIndex,
 }) => {
@@ -198,9 +201,19 @@ const FloatCard = ({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <img src={icon} alt={name} className="float-card-icon" />
+        <img
+          src={isHovered ? iconReverse : icon}
+          alt=""
+          className="float-card-icon"
+        />
+        <span
+          className="float-card-year"
+          style={{ color: isHovered ? textColour : "" }}
+        >
+          {year}
+        </span>
         <h2>{title}</h2>
-        <p>{preview}</p>
+        <h3 style={{ color: isHovered ? textColour : "" }}>{preview}</h3>
       </div>
     </>
   );

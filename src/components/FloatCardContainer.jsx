@@ -6,6 +6,15 @@ import { blogs } from "./BlogData";
 const FloatCardContainer = () => {
   const [zIndexes, setZIndexes] = useState(Array(blogs.length).fill(1));
   const [selectedBlog, setSelectedBlog] = useState(null);
+  const [hoveredBlog, setHoveredBlog] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredBlog(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredBlog(null);
+  };
 
   const handleHover = (index) => {
     setZIndexes((prevZIndexes) => {
@@ -28,20 +37,33 @@ const FloatCardContainer = () => {
       <div id="floatCardHero" className="float-hero">
         <div id="floatCardContainer" className="float-card-container">
           {blogs.map((blog, index) => (
-            <div key={index}>
+            <div
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+              key={index}
+            >
               <FloatCard
-                name={blog.name} // Added
-                icon={blog.icon} // Added
+                name={blog.name}
+                icon={blog.icon}
+                iconReverse={blog.iconReverse}
                 title={
-                  <a href="#" onClick={() => handleOpenBlog(blog)}>
+                  <a
+                    style={{
+                      color: hoveredBlog === index ? blog.textColour : "",
+                    }} // Change title color based on hover
+                    href="#"
+                    onClick={() => handleOpenBlog(blog)}
+                  >
                     {blog.title}
                   </a>
                 }
+                year={blog.year}
                 preview={blog.preview}
                 footer={blog.footer}
                 colour={blog.colour}
                 handleHover={() => handleHover(index)}
                 zIndex={zIndexes[index]}
+                textColour={blog.textColour}
               />
             </div>
           ))}
@@ -79,8 +101,10 @@ const FloatCardContainer = () => {
       {selectedBlog && (
         <BlogPage
           title={selectedBlog.title}
+          year={selectedBlog.year}
           content={selectedBlog.content}
           colour={selectedBlog.colour}
+          textColour={selectedBlog.textColour}
           preview={selectedBlog.preview}
           onClose={handleCloseBlog}
         />
