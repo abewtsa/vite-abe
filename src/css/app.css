@@ -147,7 +147,7 @@ a:hover {
 }
 
 .btn {
-    background-color: var(--grey800);
+    background-color: #212121;
     font-size: 1rem;
     line-height: 1.4rem;
     /* color: var(--primary-colour); */
@@ -170,7 +170,7 @@ a:hover {
     } */
 
     &.btn:hover {
-        background-color: #212121;
+        background-color: #000;
     }
 
     &.btn.disabled {

@@ -29,9 +29,11 @@
 }
 
 .blog-page-content-left h1 {
-    font-size: 3.2rem;
-    line-height: 3.2rem;
+    font-size: 3rem;
+    line-height: 3rem;
     padding-top: 2%;
+    width: 80%;
+    margin-left: 0px;
 }
 
 .blog-page-content-right {
@@ -43,8 +45,22 @@
     overflow-y: auto;
 }
 
+.blog-page-content-right p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+.blog-page-content-right .img-caption {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin-top: 0px;
+    padding: 0 0 30px 15px;
+    font-style: italic;
+}
+
 .blog-page-content-right h2 {
     font-size: 1.8rem;
+    line-height: 2rem;
     padding-top: 20px;
 }
 
@@ -97,5 +113,6 @@
     .close-button {
         top: 15px;
         right: 15px;
+        color: #212121;
     }
 }

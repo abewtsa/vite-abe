@@ -1,4 +1,12 @@
-const BlogPage = ({ title, content, colour, preview, onClose }) => {
+const BlogPage = ({
+  title,
+  content,
+  colour,
+  preview,
+  onClose,
+  cta,
+  ctalink,
+}) => {
   return (
     <div className="blog-page-overlay">
       <div className="blog-page-content">
@@ -8,6 +16,11 @@ const BlogPage = ({ title, content, colour, preview, onClose }) => {
         >
           <h1>{title}</h1>
           <h3>{preview}</h3>
+          {cta && (
+            <a href={ctalink} target="_blank" rel="noreferrer">
+              <button className="btn">{cta}</button>
+            </a>
+          )}
         </div>
 
         <div className="blog-page-content-right">

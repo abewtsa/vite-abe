@@ -59,6 +59,8 @@ const FloatCardContainer = () => {
                 }
                 year={blog.year}
                 preview={blog.preview}
+                cta={blog.cta}
+                ctalink={blog.ctalink}
                 footer={blog.footer}
                 colour={blog.colour}
                 handleHover={() => handleHover(index)}
@@ -106,6 +108,8 @@ const FloatCardContainer = () => {
           colour={selectedBlog.colour}
           textColour={selectedBlog.textColour}
           preview={selectedBlog.preview}
+          cta={selectedBlog.cta}
+          ctalink={selectedBlog.ctalink}
           onClose={handleCloseBlog}
         />
       )}

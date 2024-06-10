@@ -8,6 +8,8 @@ export const blogs = [
     icon: "public/code.svg",
     iconReverse: "public/code-reverse.svg",
     preview: "Event management platform built in NextJS.",
+    cta: "",
+    ctalink: "",
     content: (
       <div>
         <h2>What is it?</h2>
@@ -69,8 +71,10 @@ export const blogs = [
     year: "2023",
     icon: "public/figma.svg",
     iconReverse: "public/figma-reverse.svg",
-    preview:
-      "Complete journey and design – Food delivery app concept in Figma.",
+    preview: "Food delivery app concept in Figma.",
+    cta: "See Figma",
+    ctalink:
+      "https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design",
     content: (
       <div>
         <h2>Background</h2>
@@ -84,7 +88,7 @@ export const blogs = [
           work.
         </p>
 
-        <img src="/public/YesFresh-Splash.jpeg" alt="YesFresh screenshot" />
+        <img src="/public/YesFresh-Splash.jpg" alt="YesFresh screenshot" />
 
         <h2>The Brief</h2>
         <p>
@@ -96,20 +100,78 @@ export const blogs = [
           with the flexibility of scheduling and planning the meal delivery.
         </p>
 
-        <h2>Design Process</h2>
+        <h2>Product Discovery</h2>
         <p>
-          Product discovery was done to identify the features that need to be
-          designed that enable other Apps already in market to respond to the
-          brief. The product features are: a screen to list option of restaurant
-          and meals available to the user, a meal planning and scheduling
-          screen, meal item selection and management screen, meal planning and
-          scheduling screen, and finally, as usual, a member dashboard.
+          Identify the set of features that need to be designed and key screens
+          that allow the users to complete their actions and goals. Beforehand,
+          we look at possible user personas with their user stories and how we
+          bring together these features in the following screens.
+          <ul>
+            <li>
+              a screen to list option of restaurant and meals available to the
+              user
+            </li>
+            <li> a meal planning and scheduling screen</li>
+            <li>
+              meal item selection and management screen, meal planning and
+              scheduling screen
+            </li>
+            <li>and finally, as usual, a member dashboard</li>
+          </ul>
+        </p>
+
+        <img src="public/YesFresh-UX.jpg" alt="YesFresh screenshot" />
+        <p className="img-caption">
+          Product discovery with multiple user stories
+        </p>
+
+        <h2>Design decisions</h2>
+        <p>
+          Accessibility as usual is key providing enough contrast for colour
+          selections and distinct colour palette that represents healthy smart
+          choices are also required to make the app look and feel distinct from
+          the competitors in the space.
+        </p>
+
+        <img src="public/YesFresh-Colours.jpg" alt="YesFresh screenshot" />
+        <p className="img-caption">
+          YesFresh colour palette, inspired by watermelon colours
         </p>
 
         <p>
-          <strong>
-            Screenshot of product discovery workshop post it notes here
-          </strong>
+          Mobile app legibility is the main factor affecting the design
+          decisions. With lots of interaction and transfers between screens,
+          users need to have responsive input icons with enough room to breath
+          in the small mobile space.
+        </p>
+        <img src="public/YesFresh-UIsizings.jpg" alt="YesFresh screenshot" />
+        <p className="img-caption">
+          Correctly sizing icons for sticky navigation bar
+        </p>
+
+        <h2>Building a component library</h2>
+        <p>
+          I love a good component library, even with a collection of some basic
+          buttons or elements. Sometimes using popular set and forget UI
+          libraries and ready to use/consume UI primitives library like Radix
+          allows speedy development of component libraries for our projects.
+        </p>
+
+        <p>
+          Not all organisations or projects need can be answered with directly
+          using or importing basic primitives or premade components. When we are
+          required to build have a unique and coherent design with iterable
+          design delivery, having a reusable component library has enabled me to
+          setup my components early and save time in the long run.
+        </p>
+
+        <img
+          src="public/YesFresh-ComponentLibrary.jpg"
+          alt="YesFresh screenshot"
+        />
+        <p className="img-caption">
+          A robust component library is needed to solidify design process, weed
+          out inconsistencies and enable iterations
         </p>
 
         <h2>Figma: Auto-layout, Styles, and Variables</h2>
@@ -119,54 +181,33 @@ export const blogs = [
           powerful at the same time. For users of Adobe CC Suite tools like
           Photoshop or Illustrator, or designers growing up from print design
           background, Auto layout could feel restrictive sometimes (or at least
-          that's how I felt initially about it). You can get away with the
-          freedom of assigning layout manually or just let it go, trust the
-          process and let Auto layout take over. I have loved how Auto-layout
-          works, and admitedly uses it more often that not now, when maybe I
-          shouldn't. Styles is a common feature found in design tools, as in
-          Figma, a powerful tool that lets you quickly prototype, build up your
-          design library or deliver your final design. Variables take this to
-          the next leve with more granularity and control, and lets you use them
-          as design tokens in your design system. Going back to YesFresh, the
-          requirement to deliver a complete design means using all these Figma
-          features as a disciplined designer with in-depth understanding, for
-          example, setting up Auto-layouts correctly lets me edit one main
-          component and transfer the changes properly to all component
-          instances.
+          that's how I felt initially about it).
         </p>
         <p>
-          <strong>Screenshot of Autolayout here</strong>
+          You can get away with the freedom of assigning layout manually or just
+          let it go, trust the process and let Auto layout take over. I have
+          loved how Auto-layout works, and admitedly uses it more often that not
+          now, when maybe I shouldn't.
+        </p>
+        <p>
+          Styles is a common feature found in other design tools (like
+          Indesign), where in Figma, it's a powerful tool that lets you quickly
+          prototype, build up your design library or deliver your final design.
+        </p>
+        <p>
+          Variables take this to the next level with more granularity and
+          control, and lets you use them as design tokens in your design system.
+          Going back to YesFresh, the requirement to deliver a complete design
+          means using all these Figma features as a disciplined designer with
+          in-depth understanding, for example, setting up Auto-layouts correctly
+          lets me edit one main component and transfer the changes properly to
+          all component instances.
+        </p>
+        <img src="public/YesFresh-AutoLayout.jpg" alt="YesFresh screenshot" />
+        <p className="img-caption">
+          Set Autolayout once, and recompose components multiple times with ease{" "}
         </p>
 
-        <h2>Design decisions</h2>
-        <p>
-          Mobile app legibility is the main factor affecting the design
-          decisions. With lots of interaction and transfers between screens,
-          users need to have responsive input icons with enough room to breath
-          in the small mobile space. Accessibility and distinct colour palette
-          are also required to make the app look and feel distinct from the
-          competitors in the space.
-        </p>
-        <p>
-          <strong>
-            Screenshot of colour palette, screenshot of icon sizings
-          </strong>
-        </p>
-
-        <h2>Building a component library</h2>
-        <p>
-          I love a good component library, even with a collection of some basic
-          buttons or elements. The popularity of various UI libraries and ready
-          to use/consume UI primitives library like Radix allows speedy
-          development of component libraries at any scale. For a coherent and
-          iterable design delivery, it is imperative that any design process
-          include considerations for a reusable component library. Setup your
-          components early and it will pay off in the long run.
-        </p>
-
-        <p>
-          <strong>Insert screenshot of component library here</strong>
-        </p>
         <h2>AI Generated Figma Components?</h2>
         <p>
           In the early part of the design process I have tested several Figma
@@ -181,12 +222,11 @@ export const blogs = [
 
         <h2>Conclusion</h2>
         <p>
-          I was working on parts of this project during my holiday in Japan in
-          and throughout 2023. This project has brought together the different
-          parts of using Figma in my professional experience to an end-to-end
-          delivery of a design project. Further from current state I wish to see
-          design backlog and refinement of each screens or some of the design
-          features, to mature the design further.
+          This project has brought together the different parts of using Figma
+          in my professional experience to an end-to-end delivery of a design
+          project. Further from current state I wish to see design backlog and
+          refinement of each screens or some of the design features, to mature
+          the design further.
         </p>
       </div>
     ),
@@ -200,10 +240,14 @@ export const blogs = [
     icon: "public/coffeemug.svg",
     iconReverse: "public/coffeemug.svg",
     preview: "Have a Cuppa.",
+    cta: "",
+    ctalink: "",
     content: (
       <div>
         <h2>About this Blog</h2>
-
+        <p>
+          <strong>May 2024</strong>
+        </p>
         <p>
           Welcome to my site and the blog area, where I share my thoughts on all
           things UX/UI/Front-end. It's been recently rewritten in May 2024, and
@@ -216,18 +260,25 @@ export const blogs = [
           duo, please check out their works.
         </p>
 
-        <h2>Why I love Zed</h2>
+        <h2>Zed is great</h2>
         <p>
           <strong>May 2024</strong>
         </p>
         <p>
-          As a new developer, when I look outside of VSCode, there is an amazing
-          collection of IDEs out there. The temptation is to explore and pick up
-          something other than VSCode, and get into a deep rabbit hole (VIM for
-          example). Zed gives me a simple yet powerful IDE, especially when I
-          work on solo projects with a mono repo. I never felt that I misses
-          anything else from VSCode when using Zed and it also has Copilot
-          integration.{" "}
+          As a new developer especially, VSCode is definitely an amazing IDE.
+          Once I look outside VSCode, there seems to be lots of collection of
+          IDEs out there, all equally amazing in their own ways. The temptation
+          is to explore and pick up something other than VSCode, and then get
+          into a deep rabbit hole (VIM for example). No hate to VIM, would love
+          to get into it one day, when I'm not trying to finish multiple
+          projects and ideas (yes a common new developer symptom.
+        </p>
+        <p>
+          To me, Zed is a simple yet powerful IDE, especially when I work on
+          solo projects within a mono repo. The themes are amazing, it carries
+          over the important keyboard shortcuts and developer experiences from
+          VSCode or Jetbrain IDEs, and it has Copilot integration as well. I
+          never felt that I misses anything important when using Zed.
           <a href="https://zed.dev/">
             <strong>Check Zed out</strong>
           </a>
@@ -250,7 +301,7 @@ export const blogs = [
         </p>
         <p>Coming soon.</p>
 
-        <h2>Writing codes for Designers</h2>
+        <h2>Writing codes (using ChatGPT or Copilot) for Designers</h2>
         <p>
           <strong>TBA date</strong>
         </p>
@@ -268,6 +319,8 @@ export const blogs = [
     iconReverse: "public/code.svg",
     preview:
       "Digital fundraising with Raisely and React components - Coming soon",
+    cta: "",
+    ctalink: "",
     content: (
       <div>
         <h2>Coming soon</h2>
@@ -283,6 +336,8 @@ export const blogs = [
     icon: "public/figma.svg",
     iconReverse: "public/figma-reverse.svg",
     preview: "Coming soon",
+    cta: "",
+    ctalink: "",
     content: (
       <div>
         <h2>Coming soon</h2>
