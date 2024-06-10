@@ -1,3 +1,6 @@
+import Highlight from "react-highlight";
+import "highlight.js/styles/stackoverflow-dark.css";
+
 export const blogs = [
   {
     id: "1",
@@ -8,59 +11,82 @@ export const blogs = [
     icon: "public/code.svg",
     iconReverse: "public/code-reverse.svg",
     preview: "Event management platform built in NextJS.",
-    cta: "",
-    ctalink: "",
+    cta: "Visit HOOPS website",
+    ctalink: "https://hoopsqr.netlify.app/",
     content: (
-      <div>
-        <h2>What is it?</h2>
-        <p>
-          HOOPS is a user review, event and venue management app for small and
-          medium business. It is being built on the React/NextJS stack as a web
-          application, with a set of modern web technologies. Users can scan QR
-          codes, book their reservations and review their experience in one go
-          with HOOPS.
-        </p>
-        <h2>Scope</h2>
-        <p>
-          While ubiquitous QR codes have seen widespread use, the main
-          bottleneck of serving a great user experience still lies on the
-          landing page that the user will visit after scanning a QR code.
-          Another gap often seen is once QR codes have served their purpose of
-          allowing users to access links from their camera equipped smart
-          devices, they are often disregarded and taken out of the user journey.
-        </p>
-        <p>
-          HOOPS intends to bind QR codes and their link properties to be more
-          intrinsic to the user journey to empower businesses. Though this is
-          not a technical novelty, smarter use of QR codes, generated on demand
-          can enrich the user experience for the customers.
-        </p>
-        <h2>Design system</h2>
-        <p>
-          As an early idea HOOPS is a simple event management website. But as
-          the product design is refined and conceptualised further, there will
-          be a need for an engaging user dashboard, or user centre. A seamless
-          design and journey through different pages demands a basic design
-          system to guide the component design with a coherent design language.
-          HOOPS will be equiped with a component library and continously be
-          updated as the product grows.
-        </p>
-        <img src="public/Hoops-website.jpg" alt="Website screenshot" />
-        <h2>Work in progress</h2>
-        <p>
-          HOOPS is a product that will continue to grow, starting as a platform
-          to launch and use the latest web technologies like NextJS, React and
-          Typescript with a modern scalable backend (Postgres with Prisma and
-          Supabase). With a design system to guide the design languange and
-          components design, together with iterative product design process
-          HOOPS hopefully will emerge into a useful valuable product that users
-          can enjoy and rely on.
-        </p>
+      <>
+        <div>
+          <h2>What is it?</h2>
+          <p>
+            HOOPS is a user review, event and venue management app for small and
+            medium business. It is being built on the React/NextJS stack as a
+            web application, with a set of modern web technologies. Users can
+            scan QR codes, book their reservations and review their experience
+            in one go with HOOPS.
+          </p>
 
-        <button className="btn">Visit HOOPS</button>
+          <img src="public/Hoops-website.jpg" alt="Website screenshot" />
 
-        <button className="btn">HOOPS prototype in Figma</button>
-      </div>
+          <h2>Scope</h2>
+          <p>
+            While ubiquitous QR codes have seen widespread use, the main
+            bottleneck of serving a great user experience still lies on the
+            landing page that the user will visit after scanning a QR code.
+            Another gap often seen is once QR codes have served their purpose of
+            allowing users to access links from their camera equipped smart
+            devices, they are often disregarded and taken out of the user
+            journey.
+          </p>
+          <p>
+            HOOPS intends to bind QR codes and their link properties to be more
+            intrinsic to the user journey to empower businesses. Though this is
+            not a technical novelty, smarter use of QR codes, generated on
+            demand can enrich the user experience for the customers.
+          </p>
+          <div className="highlight-modify">
+            <Highlight language="jsx">
+              {`import React from 'react';
+
+         const App = () => {
+           const handleClick = () => {
+             alert('Button clicked!');
+           };
+
+           return (
+             <div>
+               <h1>Hello, world!</h1>
+               <button onClick={handleClick}>Click me</button>
+             </div>
+           );
+         };
+
+         export default App;`}
+            </Highlight>
+          </div>
+
+          <h2>Design system</h2>
+          <p>
+            As an early idea HOOPS is a simple event management website. But as
+            the product design is refined and conceptualised further, there will
+            be a need for an engaging user dashboard, or user centre. A seamless
+            design and journey through different pages demands a basic design
+            system to guide the component design with a coherent design
+            language. HOOPS will be equiped with a component library and
+            continously be updated as the product grows.
+          </p>
+
+          <h2>Work in progress</h2>
+          <p>
+            HOOPS is a product that will continue to grow, starting as a
+            platform to launch and use the latest web technologies like NextJS,
+            React and Typescript with a modern scalable backend (Postgres with
+            Prisma and Supabase). With a design system to guide the design
+            languange and components design, together with iterative product
+            design process HOOPS hopefully will emerge into a useful valuable
+            product that users can enjoy and rely on.
+          </p>
+        </div>
+      </>
     ),
   },
   {
@@ -72,7 +98,7 @@ export const blogs = [
     icon: "public/figma.svg",
     iconReverse: "public/figma-reverse.svg",
     preview: "Food delivery app concept in Figma.",
-    cta: "See Figma",
+    cta: "See in Figma",
     ctalink:
       "https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design",
     content: (

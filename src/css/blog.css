@@ -90,6 +90,39 @@
     color: #212121;
 }
 
+.custom-link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 0 0 0 15px;
+    text-decoration: underline;
+}
+
+.custom-link::after {
+    content: url("public/arrow-up-right.svg");
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+    margin-left: 0px;
+    vertical-align: middle;
+}
+
+.custom-link:hover {
+    background-color: #212121;
+    color: #eeeeee;
+}
+
+.custom-link:hover::after {
+    content: url("public/arrow-up-right-reverse.svg");
+}
+
+.highlight-modify {
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+    width: 70%;
+    margin-left: 15px;
+}
+
 @media (max-width: 600px) {
     .blog-page-content {
         flex-direction: column;
