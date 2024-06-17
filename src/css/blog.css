@@ -29,25 +29,37 @@
 }
 
 .blog-page-content-left h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
+    font-weight: 700;
     line-height: 3rem;
     padding-top: 2%;
     width: 80%;
     margin-left: 0px;
 }
 
+.blog-page-content-left h3 {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 300;
+}
+
 .blog-page-content-right {
     width: 60%;
     height: auto;
-    padding: 2%;
-    padding-right: 5%;
+    padding: 0% 5% 2% 2%;
     background-color: white;
     overflow-y: auto;
 }
 
+.blog-page-content-right h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    padding-top: 40px;
+}
+
 .blog-page-content-right p {
     font-size: 1.2rem;
-    line-height: 1.6rem;
+    line-height: 1.8rem;
 }
 
 .blog-page-content-right .img-caption {
@@ -58,12 +70,6 @@
     font-style: italic;
 }
 
-.blog-page-content-right h2 {
-    font-size: 1.8rem;
-    line-height: 2rem;
-    padding-top: 20px;
-}
-
 /* .blog-page-content-right .blog-year {
     font-size: 0.8rem;
     color: var(--primary-colour);
@@ -72,6 +78,11 @@
 
 .blog-page-content-right img {
     max-width: 600px;
+}
+
+.blog-page-content-right a:hover {
+    background-color: #212121;
+    color: #eeeeee;
 }
 
 .close-button {
@@ -119,8 +130,9 @@
 .highlight-modify {
     font-size: 0.9rem;
     line-height: 1.1rem;
-    width: 70%;
+    width: 75%;
     margin-left: 15px;
+    white-space: pre-wrap;
 }
 
 @media (max-width: 600px) {
@@ -129,12 +141,12 @@
     }
 
     .blog-page-content-left {
-        height: 45%;
+        min-height: 380px;
         width: auto;
     }
 
     .blog-page-content-right {
-        height: 55%;
+        height: auto;
         width: auto;
         overflow-y: unset;
     }
@@ -147,5 +159,13 @@
         top: 15px;
         right: 15px;
         color: #212121;
+    }
+
+    .blog-page-content-right h2 {
+        padding-top: 25px;
+    }
+
+    .highlight-modify {
+        width: 95%;
     }
 }

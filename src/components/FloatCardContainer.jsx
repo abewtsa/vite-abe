@@ -43,14 +43,15 @@ const FloatCardContainer = () => {
               key={index}
             >
               <FloatCard
+                delay={index * 60} // 100ms delay between each card
                 name={blog.name}
                 icon={blog.icon}
                 iconReverse={blog.iconReverse}
                 title={
                   <a
-                    style={{
-                      color: hoveredBlog === index ? blog.textColour : "",
-                    }} // Change title color based on hover
+                    // style={{
+                    //   color: hoveredBlog === index ? blog.textColour : "",
+                    // }} // Change title color based on hover
                     href="#"
                     onClick={() => handleOpenBlog(blog)}
                   >

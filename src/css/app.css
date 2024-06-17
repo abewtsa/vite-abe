@@ -3,6 +3,7 @@
 @import "blog.css";
 @import "floatcard.css";
 @import "mediarules.css";
+@import "special.css";
 
 #root {
     width: 100%;
@@ -134,14 +135,8 @@ img {
     color: var(--light-main-bg-colour);
 }
 
-a:link {
-    color: var(--primary-colour);
-}
-
-a:visited {
-    color: var(--primary-colour);
-}
-
+a:link,
+a:visited,
 a:hover {
     color: var(--primary-colour);
 }

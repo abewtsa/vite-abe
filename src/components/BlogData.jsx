@@ -1,5 +1,93 @@
 import Highlight from "react-highlight";
-import "highlight.js/styles/stackoverflow-dark.css";
+import "highlight.js/styles/github-dark.css";
+
+const codeStringHoops1 = `
+  import { gql } from '@apollo/client';
+
+  export const GET_USER_BOOKING = gql\`
+    query GetUserBooking($userId: ID!) {
+      booking(userId: $userId) {
+        date
+        time
+        tableId
+        qrid
+      }
+    }
+  \`;
+`;
+
+const codeStringHoops2 = `
+  import { gql } from '@apollo/client';
+
+  export const UPDATE_BOOKING = gql\`
+  mutation UpdateBookingTime($userId: ID!, $newTime: String!) {
+    updateBookingTime(userId: $userId, newTime: $newTime) {
+      date
+      time
+      tableId
+      qrid
+    }
+  }
+ \`;
+`;
+
+const codeStringHoops3 = `
+  import { gql } from '@apollo/client';
+  import client from '../apollo-client';
+
+  interface UserBookingDisplayProps {
+    userId: number;
+  }
+
+  const GET_USER_BOOKING = gql\`
+    query GetUserBooking($userId: Int!) {
+      booking(userId: $userId) {
+        date
+        time
+        tableId
+        qrid
+      }
+    }
+  \`;
+
+  export default async function UserBookingDisplay({ userId }:
+  UserBookingDisplayProps) {
+    const { data } = await client.query({
+      query: GET_USER_BOOKING,
+      variables: { userId },
+    });
+
+    export default async function UserBookingDisplay(
+    { userId }: UserBookingDisplayProps) {
+      try {
+        const { data, loading, error } = await client.query({
+          query: GET_USER_BOOKING,
+          variables: { userId },
+        });
+
+        if (loading) return <p>{loading.message}</p>;
+        if (error) return <p>{error.message}</p>;
+
+        return (
+          <div>
+            {data && data.booking ? (
+              <div className="user-dashboard-booking">
+                <p>Booking date: {data.booking.date}</p>
+                <p>Booking time: {data.booking.time}</p>
+                <p>Your table number: {data.booking.tableId}</p>
+                <p>Booking ID: {data.booking.qrid}</p>
+              </div>
+            ) : (
+              <p>No booking found.</p>
+            )}
+          </div>
+        );
+      } catch (error) {
+        console.error('Error retrieving user booking:', error);
+        return <p>We are unable to retrieve your booking data at the moment.</p>;
+      }
+    }
+  `;
 
 export const blogs = [
   {
@@ -10,7 +98,7 @@ export const blogs = [
     year: "2024",
     icon: "public/code.svg",
     iconReverse: "public/code-reverse.svg",
-    preview: "Event management platform built in NextJS.",
+    preview: "Building event management platform in NextJS",
     cta: "Visit HOOPS website",
     ctalink: "https://hoopsqr.netlify.app/",
     content: (
@@ -19,60 +107,112 @@ export const blogs = [
           <h2>What is it?</h2>
           <p>
             HOOPS is a user review, event and venue management app for small and
-            medium business. It is being built on the React/NextJS stack as a
-            web application, with a set of modern web technologies. Users can
-            scan QR codes, book their reservations and review their experience
-            in one go with HOOPS.
+            medium business. It is being built on the{" "}
+            <a
+              href="https://react.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>React</strong>
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://nextjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>NextJS</strong>
+            </a>{" "}
+            stack as a web application, with a set of modern web technologies.
+            Users can scan QR codes, book their reservations and review their
+            experience on one platform with HOOPS.
           </p>
 
           <img src="public/Hoops-website.jpg" alt="Website screenshot" />
 
           <h2>Scope</h2>
           <p>
-            While ubiquitous QR codes have seen widespread use, the main
-            bottleneck of serving a great user experience still lies on the
-            landing page that the user will visit after scanning a QR code.
-            Another gap often seen is once QR codes have served their purpose of
-            allowing users to access links from their camera equipped smart
-            devices, they are often disregarded and taken out of the user
-            journey.
+            While QR codes have seen widespread use, the main bottleneck of
+            serving a great user experience still lies on the landing page that
+            the user will arrive on after scanning a QR code.
           </p>
           <p>
-            HOOPS intends to bind QR codes and their link properties to be more
-            intrinsic to the user journey to empower businesses. Though this is
-            not a technical novelty, smarter use of QR codes, generated on
-            demand can enrich the user experience for the customers.
+            <strong>
+              HOOPS intends to bind QR codes with a booking API to enable better
+              event experience
+            </strong>
+            . With smarter use of dynamic QR codes, generated on demand, it can
+            enrich the personal experience for the customers with user reviews
+            and give businesses more power and insights about their venues or
+            events.
+          </p>
+
+          <h2>Using GraphQL to create a booking API</h2>
+          <p>
+            HOOPS uses GraphQL with Prisma and Apollo to build a booking API
+            that can be used by the business and customer modules. While there
+            are advantages and disadvantages of using GraphQL vs REST, I feel
+            that this is a good learning opportunity to take on GraphQL and run
+            with it.
+          </p>
+
+          <p>
+            Some simple examples of GraphQL query and mutation, here we are
+            creating a query to fetch user booking information based on the QR
+            code custom link as the unique id.
+          </p>
+
+          <div className="highlight-modify">
+            <Highlight language="jsx">{codeStringHoops1}</Highlight>
+          </div>
+
+          <p>And a mutation to update the booking time.</p>
+          <div className="highlight-modify">
+            <Highlight language="jsx">{codeStringHoops2}</Highlight>
+          </div>
+
+          <p>
+            And now we can use any data which is tied to the QR code and
+            dynamically serve them on any page or component, for example showing
+            user booking data this RSC below.
           </p>
           <div className="highlight-modify">
-            <Highlight language="jsx">
-              {`import React from 'react';
-
-         const App = () => {
-           const handleClick = () => {
-             alert('Button clicked!');
-           };
-
-           return (
-             <div>
-               <h1>Hello, world!</h1>
-               <button onClick={handleClick}>Click me</button>
-             </div>
-           );
-         };
-
-         export default App;`}
-            </Highlight>
+            <Highlight language="jsx">{codeStringHoops3}</Highlight>
           </div>
 
           <h2>Design system</h2>
           <p>
             As an early idea HOOPS is a simple event management website. But as
             the product design is refined and conceptualised further, there will
-            be a need for an engaging user dashboard, or user centre. A seamless
-            design and journey through different pages demands a basic design
-            system to guide the component design with a coherent design
-            language. HOOPS will be equiped with a component library and
-            continously be updated as the product grows.
+            be a need for an engaging user dashboard, or user centre. HOOPS will
+            be equiped with a component library and continously be updated as
+            the product grows. This section will be updated with a link to HOOPS
+            design system library, and most likely it will make good use of{" "}
+            <a
+              href="https://storybook.js.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>Storybook</strong>
+            </a>{" "}
+            as well.
+          </p>
+
+          <img src="public/Hoops-component.jpg" alt="screenshot" />
+
+          <h2>Visual programming</h2>
+          <p>
+            There is a lot of buzz on low code and visual programming recently,
+            so I'm eager to try out tools like{" "}
+            <a
+              href="https://nodes.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>Nodes.io</strong>
+            </a>{" "}
+            . I feel it will certainly help planning and writing the more
+            complex parts of HOOPS API once it evolves to cover more use cases.
           </p>
 
           <h2>Work in progress</h2>
@@ -80,10 +220,14 @@ export const blogs = [
             HOOPS is a product that will continue to grow, starting as a
             platform to launch and use the latest web technologies like NextJS,
             React and Typescript with a modern scalable backend (Postgres with
-            Prisma and Supabase). With a design system to guide the design
-            languange and components design, together with iterative product
-            design process HOOPS hopefully will emerge into a useful valuable
-            product that users can enjoy and rely on.
+            Prisma and Supabase). The idea has grown to add an API to serve
+            flexible data.
+          </p>
+          <p>
+            With a design system to guide the design languange and components
+            design, together with iterative product design process HOOPS
+            hopefully will emerge into a useful valuable product that users can
+            enjoy and rely on.
           </p>
         </div>
       </>
@@ -97,7 +241,7 @@ export const blogs = [
     year: "2023",
     icon: "public/figma.svg",
     iconReverse: "public/figma-reverse.svg",
-    preview: "Food delivery app concept in Figma.",
+    preview: "Food delivery app concept in Figma",
     cta: "See in Figma",
     ctalink:
       "https://www.figma.com/proto/tJlMYdV8eiVzqFkMnDXEZG/YESFRESH?page-id=0%3A1&type=design&node-id=1050-12583&viewport=1268%2C279%2C0.17&t=MirwrGpoXWsJLQ8K-1&scaling=min-zoom&starting-point-node-id=1050%3A12583&mode=design",
@@ -265,7 +409,7 @@ export const blogs = [
     year: "2024",
     icon: "public/coffeemug.svg",
     iconReverse: "public/coffeemug.svg",
-    preview: "Have a Cuppa.",
+    preview: "Have a Cuppa",
     cta: "",
     ctalink: "",
     content: (
@@ -276,11 +420,18 @@ export const blogs = [
         </p>
         <p>
           Welcome to my site and the blog area, where I share my thoughts on all
-          things UX/UI/Front-end. It's been recently rewritten in May 2024, and
-          I try to keep this blog written in vanilla React and Vite with no
-          other library, as my other go to stack is NextJS. The design is
-          shamelessly stolen from Helena Zhang and Tobias Fried from the{" "}
-          <a href="https://phosphoricons.com/">
+          things UX/UI/Front-end.
+        </p>
+        <p>
+          It's been recently rewritten in May 2024, and I try to keep this blog
+          written in vanilla React and Vite with as few library as possible,
+          with my other go to stack is NextJS. The design is shamelessly stolen
+          from Helena Zhang and Tobias Fried from the{" "}
+          <a
+            href="https://phosphoricons.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <strong>PhosporIcons</strong>
           </a>{" "}
           duo, please check out their works.
@@ -297,15 +448,15 @@ export const blogs = [
           is to explore and pick up something other than VSCode, and then get
           into a deep rabbit hole (VIM for example). No hate to VIM, would love
           to get into it one day, when I'm not trying to finish multiple
-          projects and ideas (yes a common new developer symptom.
+          projects and ideas (yes a common new developer symptom.)
         </p>
         <p>
-          To me, Zed is a simple yet powerful IDE, especially when I work on
-          solo projects within a mono repo. The themes are amazing, it carries
-          over the important keyboard shortcuts and developer experiences from
-          VSCode or Jetbrain IDEs, and it has Copilot integration as well. I
-          never felt that I misses anything important when using Zed.
-          <a href="https://zed.dev/">
+          To me, Zed is a light weight and powerful IDE with a retro flair, it's
+          very comfy especially when I work on solo projects within a mono repo.
+          The themes are amazing, it carries over the important keyboard
+          shortcuts and developer experiences from VSCode or Jetbrain IDEs, and
+          it has Copilot integration as well.{" "}
+          <a href="https://zed.dev/" target="_blank" rel="noopener noreferrer">
             <strong>Check Zed out</strong>
           </a>
         </p>
@@ -315,10 +466,10 @@ export const blogs = [
           <strong>TBA date</strong>
         </p>
         <p>
-          This will be a write up on my experience working on digital projecsts
-          in the non-profit space, detailing the common campaign structure of
-          fundraising and awareness campaigns to engage the charity audience.
-          Coming soon.
+          With experience working on digital projecsts in the non-profit space,
+          this article will detail the common campaign structure of fundraising
+          and awareness campaigns when engaging the non-profit audience. Coming
+          soon.
         </p>
 
         <h2>Cheatsheet</h2>
@@ -327,7 +478,7 @@ export const blogs = [
         </p>
         <p>Coming soon.</p>
 
-        <h2>Writing codes (using ChatGPT or Copilot) for Designers</h2>
+        <h2>Writing codes (with ChatGPT) as a Designer</h2>
         <p>
           <strong>TBA date</strong>
         </p>
@@ -343,8 +494,7 @@ export const blogs = [
     year: "",
     icon: "public/code.svg",
     iconReverse: "public/code.svg",
-    preview:
-      "Digital fundraising with Raisely and React components - Coming soon",
+    preview: "Digital fundraising with Raisely and React – Coming soon",
     cta: "",
     ctalink: "",
     content: (

@@ -1,0 +1,6 @@
+/* SPECIALS - for errors and being dumb declaring import at beginning of css */
+.float-card a:link,
+.float-card a:visited,
+.float-card a:hover {
+    color: inherit;
+}

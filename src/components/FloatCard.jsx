@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-// create initial translate offset to randomly position cards created
+// Creates a random offset for initial card positioning with maxX and maxY limits
 const getRandomOffset = (maxX, maxY) => {
   const variationX = 100;
   const variationY = 20;
@@ -11,13 +11,14 @@ const getRandomOffset = (maxX, maxY) => {
   return { x, y };
 };
 
-// create initial rotation to randomly make cards off center when created
+// Generates a random rotation within a specified maximum angle, which is provided below
 const getRandomRotation = (maxAngle) => {
   const variation = 5; // Adjust the variation as needed
-  const rotation = Math.random() * maxAngle * 2 - 15;
+  const rotation = Math.random() * maxAngle * 2 - maxAngle;
   return rotation + variation;
 };
 
+// FloatCard component definition
 const FloatCard = ({
   name,
   icon,
@@ -29,51 +30,85 @@ const FloatCard = ({
   textColour,
   handleHover,
   zIndex,
+  delay = 0, // New delay prop with default value 0
 }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [rotation, setRotation] = useState(0);
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [isAnimating, setIsAnimating] = useState(true);
-  // const [collision, setCollision] = useState(false);
+  const [animationStarted, setAnimationStarted] = useState(false); // New state variable
   const draggableRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
+  // useEffect to wrap and execute an animation function using requestAnimationFrame browser API, that updates itself every frame paint for the animation
   useEffect(() => {
-    // provision for mobile offset
-    const maxX = window.innerWidth < 768 ? 300 : 700;
-    const initialOffset = getRandomOffset(maxX, 250);
-    const initialRotation = getRandomRotation(15);
+    // Set initial offset and rotation for card animation based on viewport size
+    const maxX = window.innerWidth < 768 ? 240 : 600;
+    const mobileValue = 150;
+    const desktopValue = 200;
+    const initialOffset =
+      window.innerWidth < 768
+        ? getRandomOffset(maxX, mobileValue)
+        : getRandomOffset(maxX, desktopValue);
+    const initialRotation = getRandomRotation(20);
 
     let startTime;
     let animationFrameId;
+
+    // Animation function using requestAnimationFrame API for smooth card animation
+    // This function is automatically called by the browser to animate the card, utilizing a high-resolution timestamp (timestamp) for accurate timing.
+
+    // When requestAnimationFrame schedules the animate function:
+    // - The browser passes a DOMHighResTimeStamp (timestamp) indicating the current time of execution.
+    // - This ensures precise animation timing synced with the browser's repaint cycle.
 
     const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
 
+      //animation 'controller' start and stop
+      if (progress > 0 && !animationStarted) {
+        setAnimationStarted(true);
+      }
+
+      // VALUE NOTES: progress -> the duration of the animation, 100 -> point of origin, initialoffset -> the calculated offset for respective axis, 800 -> the duration of animation
+      //position values, provide easeInOut with animation values
       const newPosition = {
-        x: easeInOut(progress, 100, initialOffset.x, 500),
-        y: easeInOut(progress, 250, initialOffset.y, 500),
+        x: easeInOut(progress, 100, initialOffset.x + 50, 800),
+        y: easeInOut(progress, 900, -(initialOffset.y + 420), 800),
       };
 
-      const newRotation = easeInOut(progress, 0, initialRotation, 500);
+      //rotation values
+      const newRotation = easeInOut(progress, 0, initialRotation, 800);
 
       setPosition(newPosition);
       setRotation(newRotation);
 
-      if (progress < 500) {
+      // continue animation, for length of progress
+      if (progress < 800) {
         animationFrameId = requestAnimationFrame(animate);
       } else {
         setIsAnimating(false);
       }
     };
 
-    animationFrameId = requestAnimationFrame(animate);
+    //Calling the requestAnimationFrame API which is a method provided by modern web browsers that allows you to schedule a function to be called before the next repaint or redraw of the webpage. It's designed specifically for animations and other tasks that require smooth, high-performance updates to the user interface.
+    const startAnimation = () => {
+      animationFrameId = requestAnimationFrame(animate);
+    };
 
-    return () => cancelAnimationFrame(animationFrameId);
-  }, []);
+    // Apply delay before starting the animation
+    const delayTimeout = setTimeout(startAnimation, delay);
 
+    // useEffect clean up
+    return () => {
+      clearTimeout(delayTimeout);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [delay, animationStarted]);
+
+  // useEffect to store one time state between each mouse or touch events
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (dragging) {
@@ -130,6 +165,7 @@ const FloatCard = ({
     };
   }, [dragging, offset]);
 
+  // Mouse event handler for mouse events
   const handleMouseDown = (e) => {
     setDragging(true);
     setOffset({
@@ -138,6 +174,7 @@ const FloatCard = ({
     });
   };
 
+  // Touch event handler for touch devices
   const handleTouchStart = (e) => {
     const touch = e.touches[0];
     setDragging(true);
@@ -145,10 +182,11 @@ const FloatCard = ({
       x: touch.clientX - position.x,
       y: touch.clientY - position.y,
     });
+    handleHover(zIndex); // Handle hover behavior on touch start
+    setIsHovered(true); // Set hovered state on touch start
   };
 
   const handleMouseEnter = () => {
-    console.log("Hovering over the card with zIndex", zIndex);
     handleHover(zIndex);
     setIsHovered(true);
   };
@@ -157,40 +195,19 @@ const FloatCard = ({
     setIsHovered(false);
   };
 
-  // check collision of a card being dragged against a HTML element, and then pass a prop
-  // useEffect(() => {
-  //   const checkCollision = () => {
-  //     const staticDiv = document.getElementById("floatCardCup");
-  //     const draggableDiv = draggableRef.current;
+  const handleTouchEndHover = () => {
+    setIsHovered(false);
+  };
 
-  //     if (!staticDiv || !draggableDiv) return;
-
-  //     const draggableDivRect = draggableDiv.getBoundingClientRect();
-  //     const staticDivRect = staticDiv.getBoundingClientRect();
-
-  //     if (
-  //       draggableDivRect.left < staticDivRect.right &&
-  //       draggableDivRect.right > staticDivRect.left &&
-  //       draggableDivRect.top < staticDivRect.bottom &&
-  //       draggableDivRect.bottom > staticDivRect.top
-  //     ) {
-  //       setCollision(true);
-  //     } else {
-  //       setCollision(false);
-  //     }
-  //   };
-
-  //   checkCollision();
-  // }, [position]);
-
+  // returning JSX for rendering the FloatCard component
   return (
     <>
       <div
         ref={draggableRef}
         className={`float-card ${isAnimating ? "animateCard" : ""}`}
         style={{
+          display: animationStarted ? "block" : "none", // Conditionally apply display: none
           transform: `translate(${position.x}px, ${position.y}px) rotate(${rotation}deg)`,
-          // backgroundColor: collision ? "blue" : "", // Change background color when collision is detected
           cursor: dragging ? "grabbing" : "grab",
           userSelect: dragging ? "none" : "auto",
           backgroundColor: isHovered ? colour : "", // Apply hover color dynamically
@@ -200,6 +217,7 @@ const FloatCard = ({
         onTouchStart={handleTouchStart}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onTouchEnd={handleTouchEndHover}
       >
         <img
           src={isHovered ? iconReverse : icon}
@@ -212,7 +230,7 @@ const FloatCard = ({
         >
           {year}
         </span>
-        <h2>{title}</h2>
+        <h2 style={{ color: isHovered ? textColour : "" }}>{title}</h2>
         <h3 style={{ color: isHovered ? textColour : "" }}>{preview}</h3>
       </div>
     </>
