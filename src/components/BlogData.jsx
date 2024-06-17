@@ -96,8 +96,8 @@ export const blogs = [
     textColour: "#fff",
     title: "Hoops Web App",
     year: "2024",
-    icon: "public/code.svg",
-    iconReverse: "public/code-reverse.svg",
+    icon: "/code.svg",
+    iconReverse: "/code-reverse.svg",
     preview: "Building event management platform in NextJS",
     cta: "Visit HOOPS website",
     ctalink: "https://hoopsqr.netlify.app/",
@@ -128,7 +128,7 @@ export const blogs = [
             experience on one platform with HOOPS.
           </p>
 
-          <img src="public/Hoops-website.jpg" alt="Website screenshot" />
+          <img src="/Hoops-website.jpg" alt="Website screenshot" />
 
           <h2>Scope</h2>
           <p>
@@ -198,7 +198,7 @@ export const blogs = [
             as well.
           </p>
 
-          <img src="public/Hoops-component.jpg" alt="screenshot" />
+          <img src="/Hoops-component.jpg" alt="screenshot" />
 
           <h2>Visual programming</h2>
           <p>
@@ -239,8 +239,8 @@ export const blogs = [
     textColour: "#fff",
     title: "YesFresh Food Delivery App",
     year: "2023",
-    icon: "public/figma.svg",
-    iconReverse: "public/figma-reverse.svg",
+    icon: "/figma.svg",
+    iconReverse: "/figma-reverse.svg",
     preview: "Food delivery app concept in Figma",
     cta: "See in Figma",
     ctalink:
@@ -290,7 +290,7 @@ export const blogs = [
           </ul>
         </p>
 
-        <img src="public/YesFresh-UX.jpg" alt="YesFresh screenshot" />
+        <img src="/YesFresh-UX.jpg" alt="YesFresh screenshot" />
         <p className="img-caption">
           Product discovery with multiple user stories
         </p>
@@ -303,7 +303,7 @@ export const blogs = [
           the competitors in the space.
         </p>
 
-        <img src="public/YesFresh-Colours.jpg" alt="YesFresh screenshot" />
+        <img src="/YesFresh-Colours.jpg" alt="YesFresh screenshot" />
         <p className="img-caption">
           YesFresh colour palette, inspired by watermelon colours
         </p>
@@ -314,7 +314,7 @@ export const blogs = [
           users need to have responsive input icons with enough room to breath
           in the small mobile space.
         </p>
-        <img src="public/YesFresh-UIsizings.jpg" alt="YesFresh screenshot" />
+        <img src="/YesFresh-UIsizings.jpg" alt="YesFresh screenshot" />
         <p className="img-caption">
           Correctly sizing icons for sticky navigation bar
         </p>
@@ -335,10 +335,7 @@ export const blogs = [
           setup my components early and save time in the long run.
         </p>
 
-        <img
-          src="public/YesFresh-ComponentLibrary.jpg"
-          alt="YesFresh screenshot"
-        />
+        <img src="/YesFresh-ComponentLibrary.jpg" alt="YesFresh screenshot" />
         <p className="img-caption">
           A robust component library is needed to solidify design process, weed
           out inconsistencies and enable iterations
@@ -373,7 +370,7 @@ export const blogs = [
           lets me edit one main component and transfer the changes properly to
           all component instances.
         </p>
-        <img src="public/YesFresh-AutoLayout.jpg" alt="YesFresh screenshot" />
+        <img src="/YesFresh-AutoLayout.jpg" alt="YesFresh screenshot" />
         <p className="img-caption">
           Set Autolayout once, and recompose components multiple times with ease{" "}
         </p>
@@ -407,8 +404,8 @@ export const blogs = [
     textColour: "",
     title: "Blog",
     year: "2024",
-    icon: "public/coffeemug.svg",
-    iconReverse: "public/coffeemug.svg",
+    icon: "/coffeemug.svg",
+    iconReverse: "/coffeemug.svg",
     preview: "Have a Cuppa",
     cta: "",
     ctalink: "",
@@ -492,8 +489,8 @@ export const blogs = [
     textColour: "",
     title: "Fundraise for Good",
     year: "",
-    icon: "public/code.svg",
-    iconReverse: "public/code.svg",
+    icon: "/code.svg",
+    iconReverse: "/code.svg",
     preview: "Digital fundraising with Raisely and React – Coming soon",
     cta: "",
     ctalink: "",
@@ -509,8 +506,8 @@ export const blogs = [
     textColour: "#fff",
     title: "CSS Stylist",
     year: "",
-    icon: "public/figma.svg",
-    iconReverse: "public/figma-reverse.svg",
+    icon: "/figma.svg",
+    iconReverse: "/figma-reverse.svg",
     preview: "Coming soon",
     cta: "",
     ctalink: "",
