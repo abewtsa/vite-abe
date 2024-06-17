@@ -1,0 +1,212 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+@import "blog.css";
+@import "floatcard.css";
+@import "mediarules.css";
+@import "special.css";
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    --main-colour: #d8dcf0;
+    --dark-main-colour: #4000b8;
+    --main-bg-colour: #0d1321;
+    --light-main-bg-colour: #ededed;
+    --primary-colour: #090e1a;
+    --primary-darker: #0077b6;
+    --dark-primary-colour: #fff4e6;
+    --accent-colour: #f2ad00;
+    --dark-accent-colour: #00b4d8;
+    --secondary-colour: #00b4d8;
+    --grey800: #424242;
+    --grey300: #e0e0e0;
+    --cream: #e3dfdc;
+    font-size: 17px;
+    line-height: 1.6rem;
+    background-color: var(--light-main-bg-colour);
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding-top: 8px;
+    margin: auto;
+    color: var(--primary-colour);
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2rem;
+    color: var(--primary-colour);
+    padding: 0 0 0 15px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2rem;
+    color: var(--primary-colour);
+    padding: 0 0 0 15px;
+    margin: auto;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+    color: var(--primary-colour);
+    padding: 10px 15px 10px 15px;
+    margin: auto;
+}
+
+.navbar {
+    height: 100px;
+    position: relative;
+    /* margin-bottom: 30px; */
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: auto;
+    color: var(--primary-colour);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    font-weight: 300;
+    color: var(--primary-colour);
+    padding: 0 15px 0 15px;
+    white-space: pre-line;
+}
+
+body {
+    background-color: var(--main-bg-colour);
+    font-family: "SF Pro Display", sans-serif;
+    overflow: hidden;
+}
+
+footer {
+    position: absolute;
+    font-size: 0.9rem;
+    left: 5%;
+    bottom: 5%;
+    padding-bottom: 20px;
+    color: var(--primary-colour);
+    font-weight: 300;
+    z-index: 0;
+}
+
+img {
+    padding: 15px;
+    object-fit: contain;
+}
+
+.element-none {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.container-680 {
+    width: 680px;
+    overflow: hidden;
+}
+
+.container-image-flex {
+    display: flex;
+    flex-direction: row !important;
+}
+
+.body-wrapper {
+    height: 80vh;
+}
+
+.hero-highlight {
+    background-color: #212121;
+    color: var(--light-main-bg-colour);
+}
+
+a:link,
+a:visited,
+a:hover {
+    color: var(--primary-colour);
+}
+
+.btn {
+    background-color: #212121;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    /* color: var(--primary-colour); */
+    border-radius: 20px;
+    font-weight: 600;
+    min-width: 120px;
+    cursor: pointer;
+    transition: all 150ms ease;
+    width: fit-content;
+    margin: 0 30px 15px 15px;
+    border: none;
+    padding: 12px 20px 12px 20px;
+
+    /* &:hover:not(:disabled) {
+        background-color: turquoise;
+    } */
+
+    /* &:active:not(:disabled) {
+        background-color: var(--primary-colour);
+    } */
+
+    &.btn:hover {
+        background-color: #000;
+    }
+
+    &.btn.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.container-header {
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.sticky-desktop {
+    width: 150px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 0px;
+    bottom: 70px;
+    padding-right: 50px;
+    background-color: var(--cream);
+}
+
+.sticky-mobile {
+    color: var(--primary-colour);
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 150px;
+    height: 50px;
+    position: fixed;
+    right: 0px;
+    bottom: 20px;
+    padding-right: 50px;
+    background-color: var(--cream);
+    cursor: pointer;
+}

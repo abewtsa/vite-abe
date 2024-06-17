@@ -1,0 +1,112 @@
+/* ## Dark Mode ## */
+.dark-mode {
+    #root {
+        background-color: var(--main-bg-colour);
+    }
+
+    title,
+    h1,
+    h2,
+    h3,
+    p,
+    footer,
+    .sticky-mobile,
+    .title {
+        color: var(--dark-primary-colour);
+    }
+
+    .sticky-desktop,
+    .sticky-mobile {
+        background-color: var(--primary-colour);
+    }
+
+    @media (max-width: 600px) {
+        .nav-elements {
+            background-color: var(--main-bg-colour);
+        }
+    }
+
+    .btn {
+        background-color: var(--main-bg-colour);
+        color: var(--cream);
+    }
+
+    .profile-card {
+        background-color: rgb(23, 27, 52);
+    }
+
+    a:link {
+        color: var(--dark-primary-colour);
+    }
+
+    a:visited {
+        color: var(--dark-primary-colour);
+    }
+
+    a:hover {
+        color: var(--accent-colour);
+    }
+
+    .nav-elements ul a,
+    .nav-elements ul a.active {
+        color: var(--dark-primary-colour);
+    }
+
+    .nav-elements ul a:hover {
+        color: var(--accent-colour);
+    }
+
+    #toggle {
+        .toggle-inner {
+            content: url("/public/moon.svg");
+        }
+    }
+
+    .float-card {
+        background-color: var(--main-bg-colour);
+    }
+
+    .hero-content {
+        background-color: var(--main-bg-colour);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        color: var(--dark-primary-colour);
+    }
+    .hero-content p {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        color: var(--dark-primary-colour);
+    }
+}
+
+/* Darkmode toggle */
+#toggle {
+    width: 45px;
+    display: flex;
+    padding: 5px;
+    background-color: #1a202c;
+    display: block;
+    border-radius: 1000px;
+    cursor: pointer;
+    box-shadow: 0px 5px 20px -10px #000000;
+    transition: background-color 0.2s ease-in;
+    margin-right: 30px;
+
+    .toggle-inner {
+        width: 20px;
+        padding: 3px;
+        height: 15px;
+        background-color: white;
+        border-radius: 1000px;
+        transition:
+            margin-left 0.2s ease-in,
+            background-color 0.2s ease-in;
+        content: url("/public/sun.svg");
+
+        &.toggle-active {
+            margin-left: 20px;
+        }
+    }
+}

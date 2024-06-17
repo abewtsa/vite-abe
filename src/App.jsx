@@ -1,49 +1,53 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Homepage from './pages/Home.jsx'
-import Projects from './pages/Projects.jsx'
-import Layout from './pages/Layout.jsx'
-import Contact from './pages/Contact.jsx'
-import About from './pages/About.jsx'
-import Cheatsheet from './pages/Cheatsheet.jsx'
-import './App.css'
+import Homepage from "./pages/Home.jsx";
+import Projects from "./pages/Projects.jsx";
+import Layout from "./pages/Layout.jsx";
+import Contact from "./pages/Contact.jsx";
+import About from "./pages/About.jsx";
+import Cheatsheet from "./pages/Cheatsheet.jsx";
+import "./css/app.css";
 
-import Navbar from './components/Header/SimpleHeader/navbar.jsx'
+// import Navbar from "./components/Header/SimpleHeader/navbar.jsx";
 
 function App() {
-
   return (
     <>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+      <link rel="preconnect" href="https://fonts.gstatic.com/" />
 
-    <div style={{display:'flex',flexDirection:'column',minHeight:'95vh'}}>
-    <BrowserRouter>
-      <Navbar />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "95vh",
+          overflow: "hidden",
+          zIndex: "0",
+        }}
+      >
+        <BrowserRouter>
+          {/* <Navbar /> */}
 
-      <Routes>
-      <Route path="/" element={<Layout />}>
-          <Route index element={<Homepage />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="about" element={<About />} />
-          <Route path="cheatsheet" element={<Cheatsheet />} />
-      </Route>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Homepage />} />
+              <Route path="projects" element={<Projects />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="about" element={<About />} />
+              <Route path="cheatsheet" element={<Cheatsheet />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
 
-      </Routes>
-
-    </BrowserRouter>
-    </div>
-
-    <footer>
-    Built with React in Vite
-  </footer>
-  </>
-  )
+      <footer>Built with React + Vite</footer>
+    </>
+  );
 }
 
-export default App
+export default App;
 
-{/*
+{
+  /*
 
 VITA 0.1 Documentations
 
@@ -93,4 +97,5 @@ Upload to Github
 v.03
 Create Design System version using MUI
 
-*/}
+*/
+}
