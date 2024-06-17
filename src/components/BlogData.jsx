@@ -258,7 +258,7 @@ export const blogs = [
           work.
         </p>
 
-        <img src="/public/YesFresh-Splash.jpg" alt="YesFresh screenshot" />
+        <img src="/YesFresh-Splash.jpg" alt="YesFresh screenshot" />
 
         <h2>The Brief</h2>
         <p>
