@@ -258,7 +258,7 @@ export const blogs = [
           work.
         </p>
 
-        <img src="./public/YesFresh-Splash.jpg" alt="YesFresh screenshot" />
+        <img src="/public/YesFresh-Splash.jpg" alt="YesFresh screenshot" />
 
         <h2>The Brief</h2>
         <p>
@@ -290,7 +290,7 @@ export const blogs = [
           </ul>
         </p>
 
-        <img src="./public/YesFresh-UX.jpg" alt="YesFresh screenshot" />
+        <img src="public/YesFresh-UX.jpg" alt="YesFresh screenshot" />
         <p className="img-caption">
           Product discovery with multiple user stories
         </p>
