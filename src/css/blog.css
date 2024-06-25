@@ -109,7 +109,7 @@
 }
 
 .custom-link::after {
-    content: url("public/arrow-up-right.svg");
+    content: url("/arrow-up-right.svg");
     display: inline-block;
     width: 30px;
     height: 30px;
