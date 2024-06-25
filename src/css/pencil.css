@@ -1,0 +1,19 @@
+@keyframes roll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200px); /* Adjust distance as needed */
+    }
+}
+
+.pencil-svg {
+    transform-origin: center;
+}
+
+.pencil-animate {
+    animation-name: roll;
+    animation-duration: 2s; /* Adjust duration as needed */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; /* Makes animation repeat infinitely */
+}

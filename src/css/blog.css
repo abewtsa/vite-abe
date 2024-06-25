@@ -124,7 +124,7 @@
 }
 
 .custom-link:hover::after {
-    content: url("public/arrow-up-right-reverse.svg");
+    content: url("/arrow-up-right-reverse.svg");
 }
 
 .highlight-modify {
