@@ -411,6 +411,42 @@ export const blogs = [
     ctalink: "",
     content: (
       <div>
+        <h2>Git explained for Designers - Explain it to me like I'm five</h2>
+        <p>
+          <strong>July 2024</strong>
+        </p>
+        <p>
+          As a preview and opening I will start by saying that whilst software
+          developers and engineers have taken much care and effort to simplify
+          and onboard people to programming concepts, in the mission to make it
+          usable and applicable for as many people and users as possible, most
+          often than not, they fail to estimate how technical the presentation
+          remains to non-technical users (even when they felt that they could go
+          no further in watering down the technicalities).
+        </p>
+
+        <p>
+          On the flip side, things like developer documentations have improved
+          so much lately both in terms of the page UX and the content writing –
+          we can go back to the days of old PHP or JQuery documentations, those
+          days I would just give up and go home as a designer – but the gap is
+          still there, and it's still very much an effort, and can be a
+          frustration for those who don't code, to understand the basic concepts
+          and let alone peruse the documentations. I suppose it is a
+          documentation instead of a tutorial or guide.
+        </p>
+
+        <p>
+          Nevertheless, this article will try to help explain the basic concepts
+          of one of the important foundations of working with code, the Git
+          repository, for designers and non-coders. Which will hopefully be
+          useful the next time you catch your developers a conversation or
+          helping understand them (or yourself) better when working in a
+          project.
+        </p>
+
+        <p>Coming soon</p>
+
         <h2>About this Blog</h2>
         <p>
           <strong>May 2024</strong>
