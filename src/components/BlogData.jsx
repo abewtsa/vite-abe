@@ -421,9 +421,10 @@ export const blogs = [
         </p>
         <p>
           It's been recently rewritten in May 2024, and I try to keep this blog
-          written in vanilla React and Vite with as few library as possible,
-          with my other go to stack is NextJS. The design is shamelessly stolen
-          from Helena Zhang and Tobias Fried from the{" "}
+          written in vanilla React and Vite with as few libraries and
+          dependencies as possible, to keep it simple and different from my
+          other go to stack like NextJS. The design is shamelessly stolen from
+          Helena Zhang and Tobias Fried from the{" "}
           <a
             href="https://phosphoricons.com/"
             target="_blank"
@@ -431,7 +432,8 @@ export const blogs = [
           >
             <strong>PhosporIcons</strong>
           </a>{" "}
-          duo, please check out their works.
+          duo, so please check out their works. (while I work on something more
+          original)
         </p>
 
         <h2>Zed is great</h2>
@@ -439,20 +441,24 @@ export const blogs = [
           <strong>May 2024</strong>
         </p>
         <p>
-          As a new developer especially, VSCode is definitely an amazing IDE.
-          Once I look outside VSCode, there seems to be lots of collection of
-          IDEs out there, all equally amazing in their own ways. The temptation
-          is to explore and pick up something other than VSCode, and then get
-          into a deep rabbit hole (VIM for example). No hate to VIM, would love
-          to get into it one day, when I'm not trying to finish multiple
-          projects and ideas (yes a common new developer symptom.)
+          As a new developer especially VSCode is definitely an amazing IDE, and
+          you can get running off the ground quickly and more importantly have a
+          standardised setup like other devs or engineers in your team. But once
+          I look outside VSCode, there seems to be lots of options out there,
+          all equally amazing in their own ways. The temptation is to explore
+          and pick up something other than VSCode, and then get into a deep
+          rabbit hole (VIM for example). No hate to VIM, would love to get into
+          it one day, when I'm not trying to finish multiple projects and ideas
+          (yes a common new developer symptom.)
         </p>
         <p>
-          To me, Zed is a light weight and powerful IDE with a retro flair, it's
-          very comfy especially when I work on solo projects within a mono repo.
-          The themes are amazing, it carries over the important keyboard
-          shortcuts and developer experiences from VSCode or Jetbrain IDEs, and
-          it has Copilot integration as well.{" "}
+          I stumbled up Zed one day during my usual run of scanning across the
+          internet for new things and have pleasantly stuck to it for simpler
+          solo projects. Zed is a light weight and powerful IDE with a retro
+          flair, it's very comfy especially when I work on solo projects within
+          a mono repo. The themes are amazing, it carries over the important
+          keyboard shortcuts and developer experiences from VSCode or Jetbrain
+          IDEs, and it has Copilot integration as well.{" "}
           <a href="https://zed.dev/" target="_blank" rel="noopener noreferrer">
             <strong>Check Zed out</strong>
           </a>
