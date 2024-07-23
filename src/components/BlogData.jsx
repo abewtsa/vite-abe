@@ -452,7 +452,7 @@ export const blogs = [
           (yes a common new developer symptom.)
         </p>
         <p>
-          I stumbled up Zed one day during my usual run of scanning across the
+          I stumbled upon Zed one day during my usual run of scanning across the
           internet for new things and have pleasantly stuck to it for simpler
           solo projects. Zed is a light weight and powerful IDE with a retro
           flair, it's very comfy especially when I work on solo projects within
