@@ -411,6 +411,31 @@ export const blogs = [
     ctalink: "",
     content: (
       <div>
+        <h2>About this Blog</h2>
+        <p>
+          <strong>May 2024</strong>
+        </p>
+        <p>
+          Welcome to my site and the blog area, where I share my thoughts on all
+          things UX/UI/Front-end.
+        </p>
+        <p>
+          It's been recently rewritten in May 2024, and I try to keep this blog
+          written in vanilla React and Vite with as few libraries and
+          dependencies as possible, to keep it simple and different from my
+          other go to stack like NextJS. The design is shamelessly stolen from
+          Helena Zhang and Tobias Fried from the{" "}
+          <a
+            href="https://phosphoricons.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <strong>PhosporIcons</strong>
+          </a>{" "}
+          duo, so please check out their works. (while I work on something more
+          original)
+        </p>
+
         <h2>Git explained for Designers - Explain it to me like I'm five</h2>
         <p>
           <strong>July 2024</strong>
@@ -446,31 +471,6 @@ export const blogs = [
         </p>
 
         <p>Coming soon</p>
-
-        <h2>About this Blog</h2>
-        <p>
-          <strong>May 2024</strong>
-        </p>
-        <p>
-          Welcome to my site and the blog area, where I share my thoughts on all
-          things UX/UI/Front-end.
-        </p>
-        <p>
-          It's been recently rewritten in May 2024, and I try to keep this blog
-          written in vanilla React and Vite with as few libraries and
-          dependencies as possible, to keep it simple and different from my
-          other go to stack like NextJS. The design is shamelessly stolen from
-          Helena Zhang and Tobias Fried from the{" "}
-          <a
-            href="https://phosphoricons.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <strong>PhosporIcons</strong>
-          </a>{" "}
-          duo, so please check out their works. (while I work on something more
-          original)
-        </p>
 
         <h2>Zed is great</h2>
         <p>
