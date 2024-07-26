@@ -466,9 +466,9 @@ export const blogs = [
           With that in mind, as background context and preview, this article
           will try to help explain the basic concepts of one of the important
           foundations of working with code, the Git repository, for designers
-          and non-coders. Which will hopefully be useful the next time you catch
-          your developers a conversation or helping understand development works
-          better or when working together in a project.
+          and non-coders. Which will hopefully be useful in helping to
+          understand development works better or when working together in a
+          project.
         </p>
 
         <p>Coming soon</p>
